@@ -1,0 +1,3 @@
+include ':navigationicon'
+include ':app'
+rootProject.name = "Exercise"

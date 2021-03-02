@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.example.designnavigation.R;
 import com.example.designnavigation.fragment.HomeFragment;
-import com.example.designnavigation.fragment.StoryFragment;
+import com.example.designnavigation.fragment.ScheduleFragment;
 import com.example.designnavigation.fragment.UserFragment;
 import com.example.designnavigation.view.NormalNavigationBar;
 
@@ -27,11 +27,11 @@ public class NormalActvity  extends AppCompatActivity {
     /**
      * 未选中icon
      */
-    private final int[] normalIcon = {R.mipmap.index, R.mipmap.find_noselected, R.mipmap.me};
+    private final int[] normalIcon = {R.mipmap.tab_home, R.mipmap.tab_schedule, R.mipmap.tab_mine};
     /**
      * 选中时icon
      */
-    private final int[] selectIcon = {R.mipmap.index_selected, R.mipmap.find_selected, R.mipmap.me_selected};
+    private final int[] selectIcon = {R.mipmap.tab_home_selected, R.mipmap.tab_schedule_selected, R.mipmap.tab_mine_selected};
 
     private final List<Fragment> fragments = new ArrayList<>();
 
@@ -42,7 +42,7 @@ public class NormalActvity  extends AppCompatActivity {
 
         navigationBar = findViewById(R.id.navigationBar);
         fragments.add(new HomeFragment());
-        fragments.add(new StoryFragment());
+        fragments.add(new ScheduleFragment());
         fragments.add(new UserFragment());
 
         navigationBar.titleItems(tabText)

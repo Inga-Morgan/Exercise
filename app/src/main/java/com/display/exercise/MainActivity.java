@@ -1,17 +1,10 @@
 package com.display.exercise;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 
-import com.example.designnavigation.fragment.HomeFragment;
-import com.example.designnavigation.fragment.StoryFragment;
-import com.example.designnavigation.fragment.UserFragment;
 import com.example.designnavigation.view.NormalNavigationBar;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private NormalNavigationBar navigationBar;

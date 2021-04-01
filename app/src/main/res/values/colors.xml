@@ -1,15 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+    <color name="blue_200">#8EA4F5</color>
+    <color name="blue_500">#3B4D83</color>
+    <color name="blue_700">#222E5A</color>
+    <color name="yellow_200">#D7E0B1</color>
+    <color name="yellow_700">#C1BB75</color>
     <color name="black">#FF000000</color>
+    <color name="black2">#ffeeeeee</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="light_blue_600">#FF039BE5</color>
-    <color name="light_blue_900">#FF01579B</color>
-    <color name="light_blue_A200">#FF40C4FF</color>
-    <color name="light_blue_A400">#FF00B0FF</color>
-    <color name="black_overlay">#66000000</color>
+    <color name="gray_color">#4b4b58</color>
+    <color name="red_checked_color">#FF4C39</color>
+    <color name="red">#F50303</color>
+    <color name="red_normal_color">#935656</color>
+    <color name="green">#72CFAC</color>
+    <color name="greenn">#ff96cf99</color>
+    <color name="yellow">#E6D8A0</color>
+    <color name="gray">#F05F5E5E</color>
+    <color name="paleturquoise">#93F79A</color>
 </resources>
+
+<!--<resources>-->
+<!--<dimen name="dp_180">180dp</dimen>-->
+<!--<dimen name="dp_10">10dp</dimen>-->
+<!--<dimen name="text_large_size">20</dimen>-->
+<!--<dimen name="common_padding">16</dimen>-->
+<!--<dimen name="abc_action_bar_default_height_material">20dp</dimen>-->
+<!--<dimen name="status_bar_height">0dp</dimen>-->
+
+<!--</resources>-->

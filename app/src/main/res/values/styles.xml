@@ -1,7 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--沉浸式状态栏-->
+    <style name="ToolBarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+        <item name="color">#EA8989</item>
+    </style>
 
-    <style name="Widget.Theme.Exercise.ButtonBar.Fullscreen" parent="">
-        <item name="android:background">@color/black_overlay</item>
-        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
+    <!-- Base application theme. -->
+
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:textAllCaps">false</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/paleturquoise</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:selectableItemBackground">@null</item>
+    </style>
+    <style name="AppTheme" parent="AppBaseTheme"/>
+
+    <style name="AnimationActivity" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+    </style>
+
+    <declare-styleable name="TransformersLayout">
+        <!--每页几列-->
+        <attr name="tl_spanCount" format="integer"/>
+        <!--每页几行-->
+        <attr name="tl_lines" format="integer"/>
+        <!--分页模式-->
+        <attr name="tl_pagingMode" format="boolean"/>
+        <!--滚动条宽度-->
+        <attr name="tl_scrollbarWidth" format="dimension|reference"/>
+        <!--滚动条高度-->
+        <attr name="tl_scrollbarHeight" format="dimension|reference"/>
+        <!--滚动条上间距-->
+        <attr name="tl_scrollbarMarginTop" format="dimension|reference"/>
+        <!--滚动条下间距-->
+        <attr name="tl_scrollBarMarginBottom" format="dimension|reference"/>
+        <!--滚动条圆角-->
+        <attr name="tl_scrollbarRadius" format="dimension|reference"/>
+        <!--滚动条轨道颜色-->
+        <attr name="tl_scrollbarTrackColor" format="color|reference"/>
+        <!--滚动条进度颜色-->
+        <attr name="tl_scrollbarThumbColor" format="color|reference"/>
+    </declare-styleable>
+
+    <!-- 标题1样式 -->
+    <style name="txt_titleStyle1">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <!-- 内容1样式 -->
+    <style name="txt_ContextStyle1">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <!-- 图片样式 -->
+    <style name="img_Style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:contentDescription">@string/app_name</item>
+    </style>
+
+    <style name="TxtTitle" parent="@style/img_Style">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:paddingLeft">6.0dip</item>
+        <item name="android:paddingRight">6.0dip</item>
+        <item name="android:focusable">false</item>
     </style>
 </resources>

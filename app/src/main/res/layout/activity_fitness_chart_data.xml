@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.display.chartwidgetdemo.widget.HollowPieChart
+                    android:id="@+id/chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="280dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="占比图" />
+
+                <com.display.chartwidgetdemo.widget.BarAndChartTest
+                    android:id="@+id/chart_new_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="280dp"
+                    android:layout_marginLeft="@dimen/dp_10" />
+            </LinearLayout>
+        </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

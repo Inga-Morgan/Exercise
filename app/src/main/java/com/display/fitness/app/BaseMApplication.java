@@ -1,0 +1,172 @@
+package com.display.fitness.app;
+
+import android.app.Activity;
+import android.app.Application;
+import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+
+import com.display.fitness.R;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Stack;
+
+/**
+ * @author: 六天
+ * @date: 2021/2/23
+ * @desc:
+ */
+public class BaseMApplication extends Application {
+
+    private static Stack<Activity> activityStack;
+
+    /**
+     * 上下文
+     */
+    protected static BaseMApplication appContext;
+    /**
+     * 主线程Handler
+     */
+    protected static Handler handler;
+    /**
+     * 主线程Handler
+     */
+    private static Handler mHandler;
+    /**
+     * 主线程
+     */
+    private static Thread mMainThread;
+
+    /**
+     * 主线程id
+     */
+    private static long mMainThreadId;
+    /**
+     * 循环队列
+     */
+    private static Looper mMainLooper;
+    private static int mainTid;
+
+
+    private List<Activity> activityList = new LinkedList<>();
+    private static BaseMApplication instance;
+
+    //单例模式中获取唯一的MyApplication实例
+    public static BaseMApplication getInstance2() {
+        if(null == instance) {
+            instance = new BaseMApplication();
+        }
+        return instance;
+    }
+
+
+    public static BaseMApplication getInstance(){
+        return appContext;
+    }
+    public static Context getAppContext() {
+        return appContext;
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        appContext = this;
+        initLogger();
+        mainTid = android.os.Process.myTid();
+        handler=new Handler();
+//        initImageLoader(getApplicationContext());
+    }
+
+    protected void initLogger() {
+    }
+
+    protected boolean isDebug(){
+        return true;
+    }
+
+    protected String setLoggerName(){
+        return getString(R.string.app_name);
+    }
+
+
+
+    //添加Activity到容器中
+    public void addActivity(Activity activity)  {
+        if (activityList == null) {
+            activityList = new ArrayList<>();
+        }
+        activityList.add(activity);
+    }
+
+    /**
+     * 添加Activity到堆栈
+     */
+    public void pushActivity(Activity activity) {
+        if (activityStack == null) {
+            activityStack = new Stack<>();
+        }
+        activityStack.add(activity);
+    }
+
+    //遍历所有Activity并finish
+    public void exit() {
+        if (activityStack != null) {
+            for (int i = 0; i < activityStack.size(); i++) {
+                Activity activity = activityStack.get(i);
+                if (!activity.isFinishing()) {
+                    activity.finish();
+                }
+
+                activityStack.remove(activity);
+            }
+        }
+        System.exit(0);
+        //杀死整个进程
+//        android.os.Process.killProcess(android.os.Process.myPid());
+    }
+
+
+    public void deleteActivity(AppCompatActivity activity) {
+        if (activity != null) {
+            activityStack.remove(activity);
+        }
+    }
+
+//    /**
+//     * 结束指定的Activity
+//     */
+//    public void killActivity(IBaseActivity activity) {
+//        if (activity != null) {
+//            activity.finishActivity();
+//            activityStack.remove(activity);
+//            activity = null;
+//        }
+//    }
+
+
+//    private void initImageLoader(Context applicationContext) {
+//        ImageLoaderConfiguration.Builder config = new ImageLoaderConfiguration.Builder(applicationContext);
+//        config.threadPriority(Thread.NORM_PRIORITY - 2);
+//        config.denyCacheImageMultipleSizesInMemory();
+//        config.diskCacheFileNameGenerator(new Md5FileNameGenerator());
+//        config.diskCacheSize(50 * 1024 * 1024); // 50 MiB
+//        config.tasksProcessingOrder(QueueProcessingType.LIFO);
+//        config.writeDebugLogs(); // Remove for release app
+//
+//        // Initialize ImageLoader with configuration.
+//        ImageLoader.getInstance().init(config.build());
+//
+//    }
+
+    public static int getMainTid() {
+        return mainTid;
+    }
+    public static Handler getHandler() {
+        return handler;
+    }
+}

@@ -1,18 +1,19 @@
-plugins {
-    id 'com.android.application'
-}
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
 
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.display.exercise"
+        applicationId "com.display.fitness"
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
+        multiDexEnabled true       
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -29,11 +30,38 @@ android {
 }
 
 dependencies {
+
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation project(path: ':navigationicon')
-    testImplementation 'junit:junit:4.13.2'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation project(path: ':normalbottom')
+    implementation project(path: ':chartwidget')
+    implementation 'com.blankj:utilcodex:1.30.5'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxjava2Version"
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofit2Version"
+    implementation "com.squareup.retrofit2:converter-scalars:$rootProject.ext.retrofit2Version"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofit2Version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.ext.retrofit2Version"
+    implementation "com.trello.rxlifecycle2:rxlifecycle:$rootProject.ext.rxlifecycle"
+    implementation "com.trello.rxlifecycle2:rxlifecycle-components:$rootProject.ext.rxlifecycle"
+    implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    implementation 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+    implementation 'com.gyf.immersionbar:immersionbar-components:3.0.0'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+    implementation "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4"
+
+    implementation 'com.squareup.okhttp3:okhttp:3.14.2'
+    implementation 'com.zhy:okhttputils:2.6.2'
+    implementation 'com.android.support:multidex:1.0.3'
 }

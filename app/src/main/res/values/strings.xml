@@ -1,5 +1,93 @@
 <resources>
-    <string name="app_name">Exercise</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="app_name">Fitness</string>
+    <string name="unknown">未知</string>
+    <string name="input_account_hint">请输入手机号</string>
+    <string name="input_password_hint">请输入密码</string>
+    <string name="login_button_text">登录</string>
+    <string name="internet_unavailable_hint">当前网络不可用..请稍后再试</string>
+    <string name="course_text">课程表</string>
+    <string name="grade_text">成绩</string>
+    <string name="user_text">用户</string>
+    <string name="query_school_timetable_button">查询</string>
+    <string name="grade">成绩:</string>
+    <string name="subject">科目:</string>
+    <string name="achievement_point">绩点:</string>
+    <string name="settings">设置</string>
+    <string name="subject_type">课程类型:</string>
+    <string name="teacher_name">教师姓名:</string>
+    <string name="exam_type">考试类型:</string>
+    <string name="student_number">学号:</string>
+    <string name="class_name">班级:</string>
+    <string name="institution">学院:</string>
+    <string name="remember_password">记住密码</string>
+    <string name="auto_login">自动登录</string>
+    <string name="logout">注销账户</string>
+
+    <!-- 用户 -->
+    <string name="nick_name">北野</string>
+    <string name="signature">为32</string>
+    <string name="me">我</string>
+    <string name="user_uid">UID：dada20150625</string>
+    <string name="user_level">菜鸡</string>
+    <string name="user_birthday">2020-11-28</string>
+    <string name="created_time">2021-03-12</string>
+    <string name="user_college">西安邮电大学2017届</string>
+    <string name="contacts">通讯录</string>
+    <string name="user_account">账号管理</string>
+    <string name="about_us">关于我们</string>
+    <string name="user_feedback">意见反馈</string>
+    <string name="update">检查更新</string>
+    <string name="fitness_data">健身数据</string>
+
+    <!--  个人信息  -->
+    <string name="header">头像</string>
+    <string name="nicky_title">昵称</string>
+    <string name="birth_data">出生年月</string>
+    <string name="Signature">个性签名</string>
+    <string name="UID">UID</string>
+    <string name="created_data">创建日期</string>
+    <string name="College">学院</string>
+    <string name="class_title">班级</string>
+    <string name="major_title">专业</string>
+    <string name="sologn">个性签名</string>
+    <string name="account_title">学号</string>
+    <string name="level_title">等级</string>
+    <string name="nick_edit_intro">好的名字可以更容易记住你</string>
+    <string name="class_content">计科1706班</string>
+    <string name="major_content">计算机科学与技术</string>
+    <string name="account_content">04171190</string>
+
+
+    <!--  通用  -->
+    <string name="edit">编辑</string>
+    <string name="discover">发现</string>
+    <string name="recommended_friends">新的朋友</string>
+    <string name="group_chats">群聊</string>
+    <string name="official_accounts">订阅号</string>
+    <string name="chat">微信</string>
+    <string name="no_msg">暂时没有新消息</string>
+    <string name="wechat_id">微信号</string>
+    <string name="my_posts">相册</string>
+    <string name="collection">收藏</string>
+    <string name="wallet">钱包</string>
+    <string name="card_bag">卡包</string>
+    <string name="expression2">表情</string>
+    <string name="moments">朋友圈</string>
+    <string name="scan">扫一扫</string>
+    <string name="shake2">摇一摇</string>
+    <string name="people_nearby">附近的人</string>
+    <string name="drift_bottle">漂流瓶</string>
+    <string name="shopping">购物</string>
+    <string name="games">游戏</string>
+    <string name="search">搜索</string>
+    <string name="countries_and_areas">国家和地区</string>
+    <string name="password">密码</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_groupchat">发起群聊</string>
+    <string name="menu_addfriend">添加朋友</string>
+    <string name="menu_qrcode">扫一扫</string>
+    <string name="menu_money">微信支付</string>
+
 </resources>

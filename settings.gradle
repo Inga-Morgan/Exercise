@@ -1,3 +1,4 @@
-include ':navigationicon'
+include ':chartwidget'
+include ':normalbottom'
 include ':app'
-rootProject.name = "Exercise"
+rootProject.name = "Fitness"

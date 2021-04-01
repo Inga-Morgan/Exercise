@@ -1,18 +1,13 @@
 package com.display.fitness.fragment
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.View
-import android.widget.TextView
-import android.widget.Toast
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.display.fitness.R
 import com.display.fitness.base.BaseFragment
 
 
 /**
- * @author: 六天
+ * @author: yees
  * @date:   2021/2/10
  * @desc:
  */
@@ -85,7 +80,6 @@ open class HomeFragment : BaseFragment() {
 //                })
 
 
-
 //        mRecyclerView?.layoutManager = LinearLayoutManager(context)
 //        val beans: MutableList<String> = java.util.ArrayList()
 //        val adapter = HomeMenuAdapter(beans)
@@ -99,7 +93,7 @@ open class HomeFragment : BaseFragment() {
 //        mRecyclerView?.adapter = adapter
 //    }
 
-//    //设置Banner样式
+    //    //设置Banner样式
 //    private fun setupDashIndicator(mBannerView: BannerViewPager<Int>) {
 //        mBannerView.setIndicatorStyle(IndicatorStyle.DASH)
 //                .setIndicatorHeight(getNormalWidth(R.dimen.dp_3))

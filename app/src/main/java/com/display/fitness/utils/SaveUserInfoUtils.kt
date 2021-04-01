@@ -3,13 +3,13 @@ package com.display.fitness.utils
 import com.display.fitness.model.CommonJson
 
 /**
- * @author : 六天
+ * @author : yees
  * @date :   2021/3/25
- * @mail :   wangyijing01@bilibili.com
+ *@desc
  */
 object SaveUserInfoUtils {
 
-    private var userInfo: CommonJson.UserInfo ?= null
+    private var userInfo: CommonJson.UserInfo? = null
     fun getUserInfo(): CommonJson.UserInfo? {
         return userInfo
     }

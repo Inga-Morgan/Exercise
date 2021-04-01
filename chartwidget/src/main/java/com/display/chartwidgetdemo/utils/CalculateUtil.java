@@ -6,9 +6,9 @@ import android.graphics.Paint;
 import java.math.BigDecimal;
 
 /**
- * 作者：chs on 2016/9/8 10:02
- * 邮箱：657083984@qq.com
- * 计算 工具类
+ * @author : yees
+ * @date :   2021/3/11
+ * @desc :  工具类
  */
 public class CalculateUtil {
 
@@ -18,7 +18,7 @@ public class CalculateUtil {
      * @param value
      * @return
      */
-    public  static int getScale(float value) {
+    public static int getScale(float value) {
         if (value >= 1 && value < 10) {
             return 0;
         }
@@ -121,31 +121,33 @@ public class CalculateUtil {
         float res = b1.multiply(b2).setScale(1, BigDecimal.ROUND_HALF_UP).floatValue();
         return res;
     }
-    public static BigDecimal add(double v1,double v2){
+
+    public static BigDecimal add(double v1, double v2) {
         BigDecimal b1 = new BigDecimal(Double.toString(v1));
         BigDecimal b2 = new BigDecimal(Double.toString(v2));
         return b1.add(b2);
     }
 
-    public static BigDecimal sub(double v1,double v2){
+    public static BigDecimal sub(double v1, double v2) {
         BigDecimal b1 = new BigDecimal(Double.toString(v1));
         BigDecimal b2 = new BigDecimal(Double.toString(v2));
         return b1.subtract(b2);
     }
 
 
-    public static BigDecimal mul(double v1,double v2){
+    public static BigDecimal mul(double v1, double v2) {
         BigDecimal b1 = new BigDecimal(Double.toString(v1));
         BigDecimal b2 = new BigDecimal(Double.toString(v2));
         return b1.multiply(b2);
     }
 
-    public static BigDecimal div(double v1,double v2){
+    public static BigDecimal div(double v1, double v2) {
         BigDecimal b1 = new BigDecimal(Double.toString(v1));
         BigDecimal b2 = new BigDecimal(Double.toString(v2));
-        return b1.divide(b2,2,BigDecimal.ROUND_HALF_UP);//四舍五入,保留2位小数
+        return b1.divide(b2, 2, BigDecimal.ROUND_HALF_UP);//四舍五入,保留2位小数
         //除不尽的情况
     }
+
     /**
      * 得到最大宽度值得文本
      *
@@ -176,7 +178,8 @@ public class CalculateUtil {
 
     /**
      * 提供精确的小数位四舍五入处理。
-     * @param v 需要四舍五入的数字
+     *
+     * @param v     需要四舍五入的数字
      * @param scale 小数点后保留几位
      * @return 四舍五入后的结果
      */

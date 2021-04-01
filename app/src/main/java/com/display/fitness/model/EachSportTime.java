@@ -12,15 +12,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author : 六天
+ * @author : yees
  * @date :   2021/3/29
- * @mail :   wangyijing01@bilibili.com
+ * @desc
  */
 public class EachSportTime {
 
     /**
      * code
-     */ /**
+     */
+    /**
      * code : 200
      * message : null
      * data : [{"sportTime":601.3833,"sport":"游泳"},{"sportTime":540,"sport":"跑步"},{"sportTime":540,"sport":"瑜伽"}]
@@ -86,7 +87,8 @@ public class EachSportTime {
     public class DataSportInfo {
         /**
          * sportTime
-         */ /**
+         */
+        /**
          * sportTime : 601.3833
          * sport : 游泳
          */
@@ -99,12 +101,12 @@ public class EachSportTime {
         @SerializedName("sport")
         public String sport;
 
-        public   DataSportInfo objectFromData(String str) {
+        public DataSportInfo objectFromData(String str) {
 
             return new Gson().fromJson(str, DataSportInfo.class);
         }
 
-        public  DataSportInfo objectFromData(String str, String key) {
+        public DataSportInfo objectFromData(String str, String key) {
 
             try {
                 JSONObject jsonObject = new JSONObject(str);
@@ -117,7 +119,7 @@ public class EachSportTime {
             return null;
         }
 
-        public  List<DataSportInfo> arrayDataSportInfoFromData(String str) {
+        public List<DataSportInfo> arrayDataSportInfoFromData(String str) {
 
             Type listType = new TypeToken<ArrayList<DataSportInfo>>() {
             }.getType();
@@ -125,7 +127,7 @@ public class EachSportTime {
             return new Gson().fromJson(str, listType);
         }
 
-        public  List<DataSportInfo> arrayDataSportInfoFromData(String str, String key) {
+        public List<DataSportInfo> arrayDataSportInfoFromData(String str, String key) {
 
             try {
                 JSONObject jsonObject = new JSONObject(str);

@@ -1,22 +1,22 @@
 package com.display.chartwidgetdemo.entity;
 
 /**
- * @author : 六天
+ * @author : yees
  * @date :   2021/3/11
- * @mail :   wangyijing01@bilibili.com
+ * @desc
  */
 public class SportData {
     private String sportTime;
     private Integer rankCount;
     private Float dateTime;
 
-    public SportData(String sportTime, Integer rankCount, Float dateTime){
+    public SportData(String sportTime, Integer rankCount, Float dateTime) {
         this.sportTime = sportTime;
         this.dateTime = dateTime;
         this.rankCount = rankCount;
     }
 
-    public String getSportTime(){
+    public String getSportTime() {
         return sportTime;
     }
 

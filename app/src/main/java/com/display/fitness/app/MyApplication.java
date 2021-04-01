@@ -4,9 +4,9 @@ import android.app.Application;
 import android.content.Context;
 
 /**
- * @author : 六天
+ * @author : yees
  * @date :   2021/3/25
- * @mail :   wangyijing01@bilibili.com
+ * @desc
  */
 public class MyApplication extends Application {
 

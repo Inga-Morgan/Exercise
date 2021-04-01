@@ -12,9 +12,9 @@ import org.jetbrains.annotations.Nullable;
 
 
 /**
- * @author : 六天
+ * @author : yees
  * @date :   2021/3/31
- * @mail :   wangyijing01@bilibili.com
+ * @desc
  */
 public class UserInfoEditFragment extends BaseFragment implements View.OnClickListener {
 

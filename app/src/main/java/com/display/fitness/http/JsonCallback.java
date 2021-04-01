@@ -10,8 +10,9 @@ import java.io.IOException;
 import okhttp3.Response;
 
 /**
- * Json封装
- * Created by wcy on 2015/12/20.
+ * @author : yees
+ * @date :   2021/3/22
+ * @desc : Json封装
  */
 public abstract class JsonCallback<T> extends Callback<T> {
     private Class<T> clazz;
@@ -26,8 +27,8 @@ public abstract class JsonCallback<T> extends Callback<T> {
     public T parseNetworkResponse(Response response, int id) throws IOException {
         try {
             String jsonString = response.body().string();
-            Log.e("TAG_debug_jsonString",jsonString);
-            Log.e("TAG_gson",gson.fromJson(jsonString,clazz).toString());
+            Log.e("TAG_debug_jsonString", jsonString);
+            Log.e("TAG_gson", gson.fromJson(jsonString, clazz).toString());
             return gson.fromJson(jsonString, clazz);
         } catch (Exception e) {
             e.printStackTrace();

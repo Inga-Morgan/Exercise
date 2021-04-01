@@ -1,7 +1,9 @@
 package com.display.chartwidgetdemo.entity;
 
 /**
- * Created by chs on 2016/9/8.
+ * @author : yees
+ * @date :   2021/3/11
+ * @desc :
  */
 public class PieDataEntity {
 

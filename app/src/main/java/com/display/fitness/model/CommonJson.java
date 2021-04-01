@@ -3,9 +3,9 @@ package com.display.fitness.model;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * @author : 六天
+ * @author : yees
  * @date :   2021/3/18
- * @mail :   wangyijing01@bilibili.com
+ * @desc
  */
 public class CommonJson {
 
@@ -183,7 +183,7 @@ public class CommonJson {
         private String password;
 
 
-        public LoginParam(String telephone,String password) {
+        public LoginParam(String telephone, String password) {
             this.telephone = telephone;
             this.password = password;
         }

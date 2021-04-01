@@ -1,9 +1,9 @@
 package com.display.chartwidgetdemo.entity;
 
 /**
- * @author : 六天
+ * @author : yees
  * @date :   2021/3/11
- * @mail :   wangyijing01@bilibili.com
+ * @desc
  */
 public class BarChartEntity {
 

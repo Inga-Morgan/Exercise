@@ -3,10 +3,6 @@ package com.display.fitness.http
 import android.util.Log
 import com.display.fitness.app.MyApplication
 import com.display.fitness.constant.Constans
-import com.display.fitness.http.ClientHelper
-import com.display.fitness.http.HttpCallback
-import com.display.fitness.http.HttpInterceptor
-import com.display.fitness.http.JsonCallback
 import com.display.fitness.model.CommonJson
 import com.display.fitness.model.EachSportTime
 import com.display.fitness.model.SportInfoBean
@@ -22,9 +18,9 @@ import java.util.concurrent.TimeUnit
 
 
 /**
- * @author : 六天
+ * @author : yees
  * @date :   2021/3/25
- * @mail :   wangyijing01@bilibili.com
+ *@desc
  */
 object HttpClientCenter {
 
@@ -116,7 +112,7 @@ object HttpClientCenter {
                 .build()
                 .execute(object : JsonCallback<SportInfoBean>(SportInfoBean::class.java) {
                     override fun onResponse(response: SportInfoBean?, id: Int) {
-                        if(response?.code == "200") {
+                        if (response?.code == "200") {
                             callback.onSuccess(response)
                         }
                     }
@@ -140,7 +136,7 @@ object HttpClientCenter {
                 .build()
                 .execute(object : JsonCallback<EachSportTime>(EachSportTime::class.java) {
                     override fun onResponse(response: EachSportTime?, id: Int) {
-                        if(response?.code == "200") {
+                        if (response?.code == "200") {
                             callback.onSuccess(response)
                         }
                     }
@@ -156,7 +152,7 @@ object HttpClientCenter {
     }
 
 
-    fun editUserNickName(key: String ,need: String,callback: HttpCallback<SportInforEntity?>) {
+    fun editUserNickName(key: String, need: String, callback: HttpCallback<SportInforEntity?>) {
         OkHttpUtils.post().url("http://118.31.58.177/user/update")
                 .addParams(key, need)
                 .build()

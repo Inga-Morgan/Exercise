@@ -18,7 +18,7 @@ import java.util.*
 
 
 /**
- * @author : 六天
+ * @author : yees
  * @date :   2021/2/22
  * @mail :
  */
@@ -101,7 +101,7 @@ abstract class BaseFragment() : ImmersionFragment() {
     /**
      * 初始化statusBar
      */
-   override fun initImmersionBar() {
+    override fun initImmersionBar() {
         mImmersionBar = ImmersionBar.with(this)
         mImmersionBar
                 .statusBarDarkFont(true, 0.2f)//设置状态栏图片为深色，(如果android 6.0以下就是半透明)
@@ -125,7 +125,7 @@ abstract class BaseFragment() : ImmersionFragment() {
     /**
      * 获取banner图片
      */
-    protected fun getPicList(count:Int): MutableList<Int> {
+    protected fun getPicList(count: Int): MutableList<Int> {
         mPictureList.clear()
         for (i in 0..count) {
             val drawable = resources.getIdentifier("banner$i", "mipmap", context?.packageName)

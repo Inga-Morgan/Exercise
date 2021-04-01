@@ -5,9 +5,9 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 /**
- * @author : 六天
+ * @author : yees
  * @date :   2021/3/25
- * @mail :   wangyijing01@bilibili.com
+ * @desc
  */
 public class SportInforEntity {
     @SerializedName("code")
@@ -85,10 +85,11 @@ public class SportInforEntity {
         private String id;
         private String internal;
 
-        public SportRequestData(String id,String internal) {
+        public SportRequestData(String id, String internal) {
             this.id = id;
             this.internal = internal;
         }
+
         public String getId() {
             return id;
         }

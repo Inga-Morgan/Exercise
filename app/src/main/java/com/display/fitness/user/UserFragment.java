@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -14,7 +13,7 @@ import com.display.fitness.base.BaseFragment;
 import com.display.fitness.fitness.FitnessChartDataActivity;
 
 /**
- * @author: 六天
+ * @author: yees
  * @date: 2021/1/29
  * @desc:
  */

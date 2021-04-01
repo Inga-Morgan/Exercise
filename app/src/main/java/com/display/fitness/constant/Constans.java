@@ -1,9 +1,9 @@
 package com.display.fitness.constant;
 
 /**
- * @author : 六天
+ * @author : yees
  * @date :   2021/3/29
- * @mail :   wangyijing01@bilibili.com
+ * @desc
  */
 public class Constans {
 

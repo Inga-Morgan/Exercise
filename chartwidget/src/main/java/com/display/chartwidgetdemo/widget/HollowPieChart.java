@@ -18,9 +18,9 @@ import java.util.List;
 
 
 /**
- * 作者：chs on 2016/9/8 16:25
- * 邮箱：657083984@qq.com
- * 空心的饼状图表
+ * @author : yees
+ * @date :   2021/3/11
+ * @desc : 空心的饼状图表
  */
 public class HollowPieChart extends View {
     public static final int TOUCH_OFFSET = 16;

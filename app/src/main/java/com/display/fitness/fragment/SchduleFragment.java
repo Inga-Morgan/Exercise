@@ -10,7 +10,7 @@ import com.display.fitness.base.BaseFragment;
 import com.gyf.immersionbar.ImmersionBar;
 
 /**
- * @author: 六天
+ * @author: yees
  * @date: 2021/1/29
  */
 public class SchduleFragment extends BaseFragment {

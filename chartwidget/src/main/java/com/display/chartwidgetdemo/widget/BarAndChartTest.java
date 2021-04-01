@@ -23,7 +23,6 @@ import android.widget.Scroller;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 
-
 import com.display.chartwidgetdemo.R;
 import com.display.chartwidgetdemo.entity.BarChartEntity;
 import com.display.chartwidgetdemo.utils.CalculateUtil;
@@ -35,9 +34,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * @author : 六天
+ * @author : yees
  * @date :   2021/3/11
- * @mail :   wangyijing01@bilibili.com
+ * @desc
  */
 public class BarAndChartTest extends View {
 

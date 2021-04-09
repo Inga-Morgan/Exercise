@@ -22,7 +22,8 @@
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:selectableItemBackground">@null</item>
     </style>
-    <style name="AppTheme" parent="AppBaseTheme"/>
+
+    <style name="AppTheme" parent="AppBaseTheme" />
 
     <style name="AnimationActivity" parent="@android:style/Animation.Activity">
         <item name="android:activityOpenEnterAnimation">@anim/slide_in_left</item>
@@ -33,25 +34,25 @@
 
     <declare-styleable name="TransformersLayout">
         <!--每页几列-->
-        <attr name="tl_spanCount" format="integer"/>
+        <attr name="tl_spanCount" format="integer" />
         <!--每页几行-->
-        <attr name="tl_lines" format="integer"/>
+        <attr name="tl_lines" format="integer" />
         <!--分页模式-->
-        <attr name="tl_pagingMode" format="boolean"/>
+        <attr name="tl_pagingMode" format="boolean" />
         <!--滚动条宽度-->
-        <attr name="tl_scrollbarWidth" format="dimension|reference"/>
+        <attr name="tl_scrollbarWidth" format="dimension|reference" />
         <!--滚动条高度-->
-        <attr name="tl_scrollbarHeight" format="dimension|reference"/>
+        <attr name="tl_scrollbarHeight" format="dimension|reference" />
         <!--滚动条上间距-->
-        <attr name="tl_scrollbarMarginTop" format="dimension|reference"/>
+        <attr name="tl_scrollbarMarginTop" format="dimension|reference" />
         <!--滚动条下间距-->
-        <attr name="tl_scrollBarMarginBottom" format="dimension|reference"/>
+        <attr name="tl_scrollBarMarginBottom" format="dimension|reference" />
         <!--滚动条圆角-->
-        <attr name="tl_scrollbarRadius" format="dimension|reference"/>
+        <attr name="tl_scrollbarRadius" format="dimension|reference" />
         <!--滚动条轨道颜色-->
-        <attr name="tl_scrollbarTrackColor" format="color|reference"/>
+        <attr name="tl_scrollbarTrackColor" format="color|reference" />
         <!--滚动条进度颜色-->
-        <attr name="tl_scrollbarThumbColor" format="color|reference"/>
+        <attr name="tl_scrollbarThumbColor" format="color|reference" />
     </declare-styleable>
 
     <!-- 标题1样式 -->
@@ -80,5 +81,133 @@
         <item name="android:paddingLeft">6.0dip</item>
         <item name="android:paddingRight">6.0dip</item>
         <item name="android:focusable">false</item>
+    </style>
+
+    <style name="TextAppearance_TitleBar_Title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <!-- title文字样式（和toolbar自带样式一样，可自行修改） -->
+    </style>
+
+    <style name="TextAppearance_TitleBar_subTitle" parent="TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
+        <!-- 左右文字样式 （和toolbar副标题样式一样，可自行修改）-->
+    </style>
+
+    <style name="Widget.AppTheme.ButtonBar.Fullscreen" parent="">
+        <item name="android:background">@color/black_overlay</item>
+        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
+    </style>
+
+    <!--  进度条展示  -->
+    <style name="TransparentDialog" parent="@android:style/Theme.Holo.Light.Dialog">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:fullBright">@color/transparent</item>
+        <item name="android:fullDark">@color/transparent</item>
+        <item name="android:topBright">@color/transparent</item>
+        <item name="android:topDark">@color/transparent</item>
+        <item name="android:borderlessButtonStyle">@color/transparent</item>
+    </style>
+
+
+    <style name="Dialog" parent="android:style/Theme.Dialog">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="LoadingDialog" parent="Dialog">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <!--是否模糊-->
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="MyDialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="divider">
+        <item name="android:background">@color/alpha_3</item>
+    </style>
+
+    <style name="match_wrap">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="ll_horizontal_match_wrap" parent="match_wrap">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="divider_horizontal_1px" parent="divider">
+        <item name="android:layout_height">1px</item>
+        <item name="android:layout_width">fill_parent</item>
+    </style>
+
+    <style name="text_huge" parent="text">
+        <item name="android:textSize">@dimen/sp_21</item>
+    </style>
+
+    <style name="text_huge_black" parent="text_huge">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="text_middle" parent="text">
+        <item name="android:textSize">@dimen/sp_16</item>
+    </style>
+
+    <style name="wrap_wrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="text" parent="wrap_wrap">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/gray_3</item>
+    </style>
+
+    <style name="divider_vertical_1px" parent="divider">
+        <item name="android:layout_width">1px</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+
+    <style name="text_middle_black" parent="text_middle">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="circle_tips_title">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:padding">@dimen/dp_5</item>
+        <item name="android:layout_margin">@dimen/dp_5</item>
+    </style>
+
+    <style name="circle_tips_content">
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:padding">@dimen/dp_5</item>
+        <item name="android:layout_margin">@dimen/dp_5</item>
+    </style>
+
+    <style name="button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:padding">@dimen/dp_5</item>
+        <item name="android:layout_margin">@dimen/dp_5</item>
     </style>
 </resources>

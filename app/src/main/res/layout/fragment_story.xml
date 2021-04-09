@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <include
-        layout="@layout/layout_toolbar"
-        android:visibility="visible" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <include layout="@layout/layout_custom_toolbar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/menu_item_circle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dp_10"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_10">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/forum_tips_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>

@@ -40,50 +40,6 @@ public class EachSportTime {
     @SerializedName("data")
     public List<DataSportInfo> data;
 
-    public static EachSportTime objectFromData(String str) {
-
-        return new Gson().fromJson(str, EachSportTime.class);
-    }
-
-    public static EachSportTime objectFromData(String str, String key) {
-
-        try {
-            JSONObject jsonObject = new JSONObject(str);
-
-            return new Gson().fromJson(jsonObject.getString(str), EachSportTime.class);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        return null;
-    }
-
-    public static List<EachSportTime> arrayEachSportTimeFromData(String str) {
-
-        Type listType = new TypeToken<ArrayList<EachSportTime>>() {
-        }.getType();
-
-        return new Gson().fromJson(str, listType);
-    }
-
-    public static List<EachSportTime> arrayEachSportTimeFromData(String str, String key) {
-
-        try {
-            JSONObject jsonObject = new JSONObject(str);
-            Type listType = new TypeToken<ArrayList<EachSportTime>>() {
-            }.getType();
-
-            return new Gson().fromJson(jsonObject.getString(str), listType);
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        return new ArrayList();
-
-
-    }
-
     public class DataSportInfo {
         /**
          * sportTime
@@ -100,49 +56,5 @@ public class EachSportTime {
          */
         @SerializedName("sport")
         public String sport;
-
-        public DataSportInfo objectFromData(String str) {
-
-            return new Gson().fromJson(str, DataSportInfo.class);
-        }
-
-        public DataSportInfo objectFromData(String str, String key) {
-
-            try {
-                JSONObject jsonObject = new JSONObject(str);
-
-                return new Gson().fromJson(jsonObject.getString(str), DataSportInfo.class);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-            return null;
-        }
-
-        public List<DataSportInfo> arrayDataSportInfoFromData(String str) {
-
-            Type listType = new TypeToken<ArrayList<DataSportInfo>>() {
-            }.getType();
-
-            return new Gson().fromJson(str, listType);
-        }
-
-        public List<DataSportInfo> arrayDataSportInfoFromData(String str, String key) {
-
-            try {
-                JSONObject jsonObject = new JSONObject(str);
-                Type listType = new TypeToken<ArrayList<DataSportInfo>>() {
-                }.getType();
-
-                return new Gson().fromJson(jsonObject.getString(str), listType);
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-            return new ArrayList();
-
-
-        }
     }
 }

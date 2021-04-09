@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dp_10">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/layout_custom_toolbar" />
+
+    <TextView
+        android:id="@+id/forum_add_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_margin="@dimen/dp_16"
+        android:clickable="true"
+        android:padding="@dimen/dp_5"
+        android:text="@string/add_circle_title"
+        android:textColor="@color/gray_color"
+        android:textSize="@dimen/sp_14"
+        android:textStyle="bold"
+        app:drawableRightCompat="@mipmap/ic_init"
+        android:focusable="true" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/dp_16"
+        android:layout_marginStart="12dp"
+        android:layout_toEndOf="@+id/forum_add_tips"
+        android:padding="@dimen/dp_5"
+        android:text="@string/add_circle_desc"
+        android:textSize="@dimen/sp_12" />
+
+    <EditText
+        android:id="@+id/forun_add_tips_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/forum_add_tips"
+        android:layout_marginTop="@dimen/dp_18"
+        android:background="@null"
+        android:hint="@string/forum_tips"
+        android:padding="@dimen/dp_5"
+        android:textSize="@dimen/sp_14" />
+
+</RelativeLayout>

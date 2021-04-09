@@ -1,0 +1,14 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.BaseRecyclerHelper" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+       <item name="colorPrimary">@color/color_light_blue</item>
+        <item name="colorPrimaryVariant">@color/gray_color</item>
+        <item name="colorOnPrimary">@color/bg</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/bg</item>
+        <item name="colorSecondaryVariant">@color/dull_blue</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+    </style>
+</resources>

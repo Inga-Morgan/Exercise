@@ -2,11 +2,16 @@ package com.display.fitness.http
 
 import android.util.Log
 import com.display.fitness.app.MyApplication
-import com.display.fitness.constant.Constans
+import com.display.fitness.bean.CommentBean
+import com.display.fitness.bean.GroupIconsBean
+import com.display.fitness.bean.TipsBean
+import com.display.fitness.bean.TipsInfo
+import com.display.fitness.constant.Constants
 import com.display.fitness.model.CommonJson
 import com.display.fitness.model.EachSportTime
 import com.display.fitness.model.SportInfoBean
 import com.display.fitness.model.SportInforEntity
+import com.display.fitness.utils.SaveUserInfoUtils
 import com.zhy.http.okhttp.OkHttpUtils
 import com.zhy.http.okhttp.callback.FileCallBack
 import com.zhy.http.okhttp.cookie.CookieJarImpl
@@ -23,9 +28,6 @@ import java.util.concurrent.TimeUnit
  *@desc
  */
 object HttpClientCenter {
-
-
-
     init {
         val cookieJar = CookieJarImpl(PersistentCookieStore(MyApplication.getAppContext()))
         val okHttpClient = OkHttpClient.Builder()
@@ -76,8 +78,11 @@ object HttpClientCenter {
                 })
     }
 
+    /**
+     * 登陆
+     */
     fun login(telephone: String, password: String, callback: HttpCallback<CommonJson?>) {
-        OkHttpUtils.post().url("http://118.31.58.177/user/login")
+        OkHttpUtils.post().url(Constants.ROOT_URL + Constants.LOGIN_URL)
                 .addParams("telephone", "17395676291")
                 .addParams("password", "123456")
                 .build()
@@ -86,6 +91,7 @@ object HttpClientCenter {
                         if (response?.code == "200") {
                             callback.onSuccess(response)
                             ClientHelper.setUserData(response)
+                            SaveUserInfoUtils.setUserInfo(response.userInfo)
                         } else {
                             callback.onFail(null)
                         }
@@ -93,14 +99,11 @@ object HttpClientCenter {
 
                     override fun onError(call: Call, e: java.lang.Exception, id: Int) {
                         callback.onFail(e)
-                        Log.e("TAG", call.toString() + "_____" + "call")
                     }
 
                     override fun onAfter(id: Int) {
                         callback.onFinish()
                     }
-
-
                 })
     }
 
@@ -131,7 +134,7 @@ object HttpClientCenter {
      * 获取每个运动的时间
      */
     fun getEachSportTime(id: String, callback: HttpCallback<EachSportTime>) {
-        OkHttpUtils.post().url(Constans.ROOT_URL + Constans.EACH_SPORT_TIME)
+        OkHttpUtils.post().url(Constants.ROOT_URL + Constants.EACH_SPORT_TIME)
                 .addParams("id", id)
                 .build()
                 .execute(object : JsonCallback<EachSportTime>(EachSportTime::class.java) {
@@ -172,4 +175,120 @@ object HttpClientCenter {
                     }
                 })
     }
+
+    /**
+     * 获取帖子列表
+     */
+    fun getTipsList(callback: HttpCallback<TipsBean>) {
+        OkHttpUtils.post().url(Constants.ROOT_URL + Constants.FORUM_LIST)
+                .build()
+                .execute(object : JsonCallback<TipsBean>(TipsBean::class.java) {
+                    override fun onResponse(response: TipsBean?, id: Int) {
+                        if (response?.code == "200") {
+                            callback.onSuccess(response)
+                        } else {
+                            callback.onFail(null)
+                        }
+                    }
+
+                    override fun onError(call: Call?, e: java.lang.Exception?, id: Int) {
+                        callback.onFail(null)
+                    }
+
+                })
+    }
+
+    fun uploadTips(group: String,content: String, callback: HttpCallback<TipsBean.TipsUpInfo>) {
+        OkHttpUtils.post().url(Constants.ROOT_URL + Constants.POST_CREATE)
+                .addParams("content", content)
+                .addParams("group",group)
+                .build()
+                .execute(object : JsonCallback<TipsBean.TipsUpInfo>(TipsBean.TipsUpInfo::class.java) {
+                    override fun onResponse(response: TipsBean.TipsUpInfo?, id: Int) {
+                        if (response?.code == "200") {
+                            callback.onSuccess(response)
+                        } else {
+                            callback.onFail(null)
+                        }
+                    }
+
+                    override fun onError(call: Call, e: Exception, id: Int) {
+                        callback.onFail(e)
+                    }
+
+                    override fun onAfter(id: Int) {
+                        callback.onFinish()
+                    }
+                })
+    }
+
+    fun getCircleIcons(callback: HttpCallback<GroupIconsBean>) {
+        OkHttpUtils.post().url(Constants.ROOT_URL + Constants.GROUP_LIST)
+                .build()
+                .execute(object : JsonCallback<GroupIconsBean>(GroupIconsBean::class.java) {
+                    override fun onResponse(response: GroupIconsBean?, id: Int) {
+                        if (response?.code == "200") {
+                            callback.onSuccess(response)
+                        } else {
+                            callback.onFail(null)
+                        }
+                    }
+
+                    override fun onError(call: Call, e: Exception, id: Int) {
+                        callback.onFail(e)
+                    }
+
+                    override fun onAfter(id: Int) {
+                        callback.onFinish()
+                    }
+                })
+    }
+
+    fun getTipsCommentList(id : String? ,callback: HttpCallback<CommentBean?>) {
+        OkHttpUtils.post().url(Constants.ROOT_URL + Constants.COMMENT_LIST)
+                .addParams("id",id)
+                .build()
+                .execute(object : JsonCallback<CommentBean>(CommentBean::class.java) {
+                    override fun onResponse(response: CommentBean?, id: Int) {
+                        if (response?.code == "200") {
+                            callback.onSuccess(response)
+                        } else {
+                            callback.onFail(null)
+                        }
+                    }
+
+                    override fun onError(call: Call, e: Exception, id: Int) {
+                        callback.onFail(e)
+                    }
+
+                    override fun onAfter(id: Int) {
+                        callback.onFinish()
+                    }
+                })
+    }
+
+    fun postCommentContent(id : String? ,comment: String?,callback: HttpCallback<CommentBean.ReplyCommentBean?>) {
+        OkHttpUtils.post().url(Constants.ROOT_URL + Constants.COMMENT_CREATE)
+                .addParams("post",id)
+                .addParams("comment",comment)
+                .build()
+                .execute(object : JsonCallback<CommentBean.ReplyCommentBean>(CommentBean.ReplyCommentBean::class.java) {
+                    override fun onResponse(response: CommentBean.ReplyCommentBean?, id: Int) {
+                        if (response?.code == "200") {
+                            callback.onSuccess(response)
+                        } else {
+                            callback.onFail(null)
+                        }
+                    }
+
+                    override fun onError(call: Call, e: Exception, id: Int) {
+                        callback.onFail(e)
+                    }
+
+                    override fun onAfter(id: Int) {
+                        callback.onFinish()
+                    }
+                })
+    }
+
 }

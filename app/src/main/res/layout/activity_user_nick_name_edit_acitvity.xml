@@ -7,8 +7,8 @@
     <include
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/layout_toolbar"
-        layout="@layout/layout_title" />
+        android:id="@+id/layout_custom_toolbar"
+        layout="@layout/layout_custom_toolbar" />
 
     <EditText
         android:id="@+id/user_nick_edit"

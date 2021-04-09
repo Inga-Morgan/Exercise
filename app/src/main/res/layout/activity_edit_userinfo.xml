@@ -4,7 +4,7 @@
     android:background="#ffffff"
     android:orientation="vertical">
 
-    <include layout="@layout/layout_title" />
+    <include layout="@layout/layout_custom_toolbar" />
 
     <RelativeLayout
         android:id="@+id/view_user"

@@ -49,6 +49,7 @@
     <string name="College">学院</string>
     <string name="class_title">班级</string>
     <string name="major_title">专业</string>
+    <string name="more">更多</string>
     <string name="sologn">个性签名</string>
     <string name="account_title">学号</string>
     <string name="level_title">等级</string>
@@ -58,7 +59,39 @@
     <string name="account_content">04171190</string>
 
 
+    <!--    进度条-->
+    <string name="loading">loading</string>
+    <!-- Toolbar   -->
+    <string name="info_edit">修改资料</string>
+    <string name="tips_up">发帖子</string>
+    <string name="publish">发布</string>
+    <string name="forum_title">xxxxx.</string>
+    <string name="info_details">个人信息</string>
+    <string name="nick_name_edit">更改昵称</string>
+    <string name="signature_edit">个性签名</string>
+    <string name="save">保存</string>
+
+    <!--  帖子发布  -->
+    <string name="notice">提示</string>
+    <string name="content_empty">没有输入内容，请重新填写</string>
+    <string name="publish_success">发布成功</string>
+    <string name="publish_failure">发布失败</string>
+    <string name="add_circle_title">添加圈子</string>
+    <string name="add_circle_contnet">添加内容</string>
+    <string name="add_circle_desc">添加合适的圈子会有更多的赞哦～</string>
+    <string name="forum_tips">在这里你可以:\n1.分享健身相关一二事\n2.交流,吐槽解压\n......</string>
+    <string name="tips_init_content">这是一个很长很长很长很很长的帖子</string>
+
+    <!--  dialog  -->
+    <string name="ok">确认</string>
+    <string name="selected_circle">选择圈子</string>
+    <string name="selected">选择</string>
+    <string name="circle_title">逃离北上广</string>
+    <string name="circle_number">位成员</string>
+    <string name="circle_tips">条帖子</string>
+
     <!--  通用  -->
+    <string name="cancle">取消</string>
     <string name="edit">编辑</string>
     <string name="discover">发现</string>
     <string name="recommended_friends">新的朋友</string>
@@ -89,5 +122,7 @@
     <string name="menu_addfriend">添加朋友</string>
     <string name="menu_qrcode">扫一扫</string>
     <string name="menu_money">微信支付</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 
 </resources>

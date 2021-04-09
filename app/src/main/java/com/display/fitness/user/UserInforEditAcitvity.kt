@@ -31,9 +31,6 @@ class UserInforEditAcitvity : BaseActivity(), View.OnClickListener {
         supportActionBar?.setTitle(R.string.UID)
     }
 
-    override fun initDatas() {
-    }
-
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.edit_init -> startActivityForResult(Intent(this@UserInforEditAcitvity, UserNickNameEditAcitvity::class.java), REQUEST_CODE)

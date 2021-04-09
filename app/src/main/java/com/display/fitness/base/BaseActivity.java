@@ -10,6 +10,8 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.display.fitness.R;
 
@@ -18,29 +20,25 @@ import com.display.fitness.R;
  * @date: 2021/2/1
  * @desc:
  */
-public abstract class BaseActivity extends BaseToolbarActivity {
+public abstract class BaseActivity extends AppCompatActivity {
     /**
      * 当前Activity是否处于前台
      */
     public boolean isActive = false;
-
-    private int navigationBarBackgroundColorValue = Color.MAGENTA;
+    private int navigationBarBackgroundColorValue = Color.WHITE;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        View view = LayoutInflater.from(this).inflate(R.layout.layout_toolbar, (ViewGroup) getWindow().getDecorView().getRootView(), false);
+    }
 
-        mToolbar = view.findViewById(R.id.toolbar);
-        mToolbar_tv_title = view.findViewById(R.id.toolbar_title);
-
-
-        steepTitle();
-        setContentView(view);
-        setSupportActionBar(mToolbar);
-
-        setTitle(getTitle());
-        initDatas();
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            setTranslucentStatus(true);
+        }
+//        tintToolbar();
     }
 
     /**
@@ -48,7 +46,7 @@ public abstract class BaseActivity extends BaseToolbarActivity {
      *
      * @param on
      */
-    protected void setTranslucentStatus(boolean on) {
+    private void setTranslucentStatus(boolean on) {
         Window window = getWindow();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
@@ -59,8 +57,6 @@ public abstract class BaseActivity extends BaseToolbarActivity {
                     | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                     | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
             );
-
-
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.setStatusBarColor(Color.TRANSPARENT);
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
@@ -94,12 +90,6 @@ public abstract class BaseActivity extends BaseToolbarActivity {
     protected void onDestroy() {
         super.onDestroy();
     }
-
-    /**
-     * 可被重写的接口
-     */
-
-    public abstract void initDatas();
 
     /**
      * 透明状态栏
@@ -142,27 +132,4 @@ public abstract class BaseActivity extends BaseToolbarActivity {
         return null;
     }
 
-
-    /**
-     * 加载沉浸式状态栏
-     */
-    @Override
-    public void steepTitle() {
-        if (Build.VERSION.SDK_INT >= 21) {
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            //注意要清除 FLAG_TRANSLUCENT_STATUS flag
-            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            getWindow().setStatusBarColor(getResources().getColor(R.color.white));
-        }
-    }
-
-    /**
-     * bar 中间标题
-     *
-     * @param title
-     */
-    @Override
-    public void setTitle(CharSequence title) {
-        mToolbar_tv_title.setText(title);
-    }
 }

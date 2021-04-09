@@ -6,14 +6,17 @@ import androidx.fragment.app.Fragment;
 
 import com.display.fitness.R;
 import com.display.fitness.base.BaseActivity;
+import com.display.fitness.forum.ScheduleFragment;
 import com.display.fitness.fragment.HomeFragment;
-import com.display.fitness.fragment.SchduleFragment;
 import com.display.fitness.user.UserFragment;
 import com.example.designnavigation.view.NormalNavigationBar;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author yis
+ */
 public class NormalActivity extends BaseActivity {
 
     private NormalNavigationBar navigationBar;
@@ -38,10 +41,9 @@ public class NormalActivity extends BaseActivity {
 
 
     private void initView() {
-        setTranslucentStatus(true);
         navigationBar = findViewById(R.id.navigationBar);
         fragments.add(new HomeFragment());
-        fragments.add(new SchduleFragment());
+        fragments.add(new ScheduleFragment());
         fragments.add(new UserFragment());
 
 
@@ -52,11 +54,6 @@ public class NormalActivity extends BaseActivity {
                 .fragmentManager(getSupportFragmentManager())
                 .canScroll(true)
                 .build();
-    }
-
-    @Override
-    public void initDatas() {
-
     }
 
     public NormalNavigationBar getNavigationBar() {

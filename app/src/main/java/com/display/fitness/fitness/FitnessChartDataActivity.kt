@@ -46,7 +46,7 @@ class FitnessChartDataActivity : AppCompatActivity() {
         mHandlerThread = HandlerThread("getSportInfo")
         mHandlerThread!!.start()
         getFitnessData()
-        workHandler = object : Handler(mHandlerThread!!.getLooper()) {
+        workHandler = object : Handler(mHandlerThread!!.looper) {
             // 消息处理的操作
             override fun handleMessage(msg: Message) {
                 //设置了两种消息处理操作,通过msg来进行识别
@@ -55,8 +55,8 @@ class FitnessChartDataActivity : AppCompatActivity() {
                         val bundle = msg.data
                         val sportAndCountInfo = bundle?.getSerializable("SportAndCountInfo") as SportAndCountInfo
 
-                        for (i in 0 .. sportAndCountInfo.rightDatas2.get(0).size -1) {
-                            Log.e("TAG____right",sportAndCountInfo.rightDatas2.get(0).get(i).toString())
+                        for (i in sportAndCountInfo.rightDatas2[0].indices) {
+                            Log.e("TAG____right", sportAndCountInfo.rightDatas2[0][i].toString())
                         }
                         handler.post(Runnable {
                             barChartNew3!!.setData(sportAndCountInfo.barList, intArrayOf(Color.parseColor("#6FC5F4")), "分组", "时长", sportAndCountInfo.rightDatas2, BarAndChartTest.TEXT_TYPE_SLANTING)
@@ -98,7 +98,7 @@ class FitnessChartDataActivity : AppCompatActivity() {
                 message.what = 1
                 val b = Bundle()
                 b.putSerializable("SportAndCountInfo", SportAndCountInfo(listBarChart, rightDatas2))
-                message.setData(b)
+                message.data = b
                 workHandler?.sendMessage(message)
             }
 

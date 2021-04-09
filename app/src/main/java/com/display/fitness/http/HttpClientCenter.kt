@@ -198,7 +198,7 @@ object HttpClientCenter {
                 })
     }
 
-    fun uploadTips(group: String,content: String, callback: HttpCallback<TipsBean.TipsUpInfo>) {
+    fun uploadTips(content: String,group: String, callback: HttpCallback<TipsBean.TipsUpInfo>) {
         OkHttpUtils.post().url(Constants.ROOT_URL + Constants.POST_CREATE)
                 .addParams("content", content)
                 .addParams("group",group)

@@ -72,7 +72,7 @@ class ForumTipsUpActivity : AppCompatActivity(), AlertDialog.OnDialogButtonClick
             val dialog = LoadingDialog(this@ForumTipsUpActivity)
             dialog.show()
 
-            HttpClientCenter.uploadTips(mContent, index, object : HttpCallback<TipsBean.TipsUpInfo>() {
+            HttpClientCenter.uploadTips( mContent, index,object : HttpCallback<TipsBean.TipsUpInfo>() {
                 override fun onSuccess(t: TipsBean.TipsUpInfo) {
                     Toast.makeText(this@ForumTipsUpActivity, resources.getString(R.string.publish_success), Toast.LENGTH_SHORT).show()
                     finish()

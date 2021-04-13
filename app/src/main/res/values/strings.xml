@@ -65,6 +65,7 @@
     <string name="info_edit">修改资料</string>
     <string name="tips_up">发帖子</string>
     <string name="publish">发布</string>
+    <string name="circle_selected">选择圈子</string>
     <string name="forum_title">xxxxx.</string>
     <string name="info_details">个人信息</string>
     <string name="nick_name_edit">更改昵称</string>
@@ -72,6 +73,8 @@
     <string name="save">保存</string>
 
     <!--  帖子发布  -->
+    <string name="not_fork">您还未关注该圈子</string>
+    <string name="goto_fork">去关注</string>
     <string name="notice">提示</string>
     <string name="content_empty">没有输入内容，请重新填写</string>
     <string name="publish_success">发布成功</string>

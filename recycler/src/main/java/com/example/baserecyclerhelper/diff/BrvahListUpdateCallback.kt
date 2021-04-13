@@ -4,7 +4,7 @@ import androidx.recyclerview.widget.ListUpdateCallback
 import com.example.baserecyclerhelper.adapter.BaseQuickAdapter
 
 /**
- * @author: 六天
+ * @author: ye's
  * @date: 2021/2/23
  * @desc:
  */

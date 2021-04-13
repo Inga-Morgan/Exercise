@@ -3,7 +3,7 @@ package com.display.fitness.model;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * @author : yees
+ * @author : ye's
  * @date :   2021/3/18
  * @desc
  */

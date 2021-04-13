@@ -7,7 +7,7 @@ import com.example.baserecyclerhelper.entity.MultiItemEntity
 import com.example.baserecyclerhelper.viewholder.BaseViewHolder
 
 /**
- * @author: 六天
+ * @author: ye's
  * @date: 2021/2/23
  * @desc:  多类型布局，适用于类型较少，业务不复杂的场景，便于快速使用。
  * data[T]必须实现[MultiItemEntity]

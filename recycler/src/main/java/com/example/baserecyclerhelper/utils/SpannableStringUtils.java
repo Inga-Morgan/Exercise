@@ -35,7 +35,7 @@ import androidx.annotation.Nullable;
 import static android.graphics.BlurMaskFilter.Blur;
 
 /**
- * @author: 六天
+ * @author: ye's
  * @date: 2021/2/23
  * @desc:   SpannableString相关工具类
  * </pre>

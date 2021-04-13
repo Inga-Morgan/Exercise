@@ -9,9 +9,9 @@ import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import java.util.List;
 
 /**
- * @author : 六天
+ * @author : ye's
  * @date :   2021/3/15
- * @mail :   wangyijing01@bilibili.com
+ * @desc :
  */
 public class HomeMenuAdapter extends BaseQuickAdapter<String,BaseViewHolder> {
 

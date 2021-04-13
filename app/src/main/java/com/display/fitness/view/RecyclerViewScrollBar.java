@@ -19,9 +19,9 @@ import com.example.baserecyclerhelper.listener.OnTransformersScrollListener;
 
 
 /**
- * @author : 六天
+ * @author : ye's
  * @date :   2021/3/15
- * @mail :   wangyijing01@bilibili.com
+ * @desc :
  */
 public class RecyclerViewScrollBar extends View {
     private static final String TAG = RecyclerViewScrollBar.class.getSimpleName();

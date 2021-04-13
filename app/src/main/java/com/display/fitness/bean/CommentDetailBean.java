@@ -6,9 +6,9 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * @author : 六天
+ * @author : ye's
  * @date :   2021/4/9
- * @mail :   wangyijing01@bilibili.com
+ * @desc :
  */
 public class CommentDetailBean implements Serializable {
     /**

@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 import com.example.baserecyclerhelper.adapter.BaseQuickAdapter;
 
 /**
- * @author: 六天
+ * @author: ye's
  * @date: 2021/2/23
  * @desc:  Interface definition for a callback to be invoked when an item in this
  * RecyclerView itemView has been clicked.

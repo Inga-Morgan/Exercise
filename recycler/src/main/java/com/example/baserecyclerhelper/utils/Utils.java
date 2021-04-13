@@ -3,7 +3,7 @@ package com.example.baserecyclerhelper.utils;
 import android.content.Context;
 
 /**
- * @author: 六天
+ * @author: ye's
  * @date: 2021/2/23
  * @desc: Utils初始化相关
  * </pre>

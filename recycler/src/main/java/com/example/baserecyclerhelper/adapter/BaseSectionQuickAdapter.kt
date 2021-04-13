@@ -5,7 +5,7 @@ import com.example.baserecyclerhelper.entity.SectionEntity
 import com.example.baserecyclerhelper.viewholder.BaseViewHolder
 
 /**
- * @author: 六天
+ * @author: ye's
  * @date: 2021/2/23
  * @desc:  快速实现带头部的 Adapter，由于本质属于多布局，所以继承自[BaseMultiItemQuickAdapter]
  * @param T : SectionEntity

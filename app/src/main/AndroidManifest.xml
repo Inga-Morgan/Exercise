@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.display.fitness" >
+    package="com.display.fitness">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -27,11 +27,11 @@
         android:supportsRtl="true"
         android:testOnly="false"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true" >
-        <activity android:name=".forum.ForumCommentActivity" >
-        </activity>
+        android:usesCleartextTraffic="true">
+        <activity android:name=".forum.ForumItemActivity"></activity>
+        <activity android:name=".forum.ForumCommentActivity"></activity>
         <activity android:name=".forum.CircleAddActivity" />
-        <activity android:name=".login.LoginActivity" >
+        <activity android:name=".login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -46,13 +46,13 @@
         <activity android:name=".ui.NormalActivity" />
         <activity android:name=".base.BaseActivity" />
         <activity android:name=".forum.ForumTipsUpActivity" />
-        <activity android:name=".forum.CircleAddActivity" />
+        <activity android:name=".forum.ForumTipsIconsActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.display.fitness.provider"
             android:exported="false"
-            android:grantUriPermissions="true" >
+            android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_path"

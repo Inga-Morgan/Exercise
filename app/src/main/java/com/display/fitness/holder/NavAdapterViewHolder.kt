@@ -11,9 +11,9 @@ import com.display.fitness.bean.HomeMenuItem
 import com.example.baserecyclerhelper.viewholder.Holder
 
 /**
- * @author : 六天
+ * @author : ye's
  * @date :   2021/3/15
- * @mail :   wangyijing01@bilibili.com
+ * @desc :
  */
 class NavAdapterViewHolder internal constructor(itemView: View) : Holder<HomeMenuItem?>(itemView) {
     private var icon: ImageView? = null

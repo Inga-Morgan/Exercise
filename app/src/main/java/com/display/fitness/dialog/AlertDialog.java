@@ -12,7 +12,7 @@ import com.display.fitness.utils.StringUtil;
 
 
 /**
- * @author : 六天
+ * @author : ye's
  * @date :   2021/3/15
  * @desc : 通用对话框类
  */

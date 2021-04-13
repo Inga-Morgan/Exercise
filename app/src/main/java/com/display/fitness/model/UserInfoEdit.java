@@ -1,7 +1,7 @@
 package com.display.fitness.model;
 
 /**
- * @author : yees
+ * @author : ye's
  * @date :   2021/3/26
  * @desc
  */

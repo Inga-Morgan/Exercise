@@ -30,7 +30,7 @@ import java.util.List;
 
 
 /**
- * @auther: yees
+ * @auther: ye's
  * @date: 2021/1/29
  */
 public class NormalNavigationBar extends LinearLayout {

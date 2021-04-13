@@ -3,7 +3,7 @@ package com.display.fitness.dialog;
 import android.app.Activity;
 
 /**
- * @author : 六天
+ * @author : ye's
  * @date :   2021/3/15
  * @desc :
  */

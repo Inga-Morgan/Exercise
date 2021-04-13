@@ -28,7 +28,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 /**
  * @author yis
  */
-public class TipsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements View.OnClickListener {
+public class TipsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private List<TipsInfo> mList;
     private Context mContext;
@@ -112,11 +112,6 @@ public class TipsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> i
         } else {
             return TYPE_ITEM;
         }
-    }
-
-    @Override
-    public void onClick(View v) {
-
     }
 
     public interface OnItemClickListener {

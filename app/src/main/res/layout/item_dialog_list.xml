@@ -14,16 +14,16 @@
         android:src="@mipmap/jy_icon_resume" />
 
     <TextView
-        style="@style/circle_tips_title"
         android:id="@+id/circle_name"
+        style="@style/circle_tips_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toEndOf="@+id/circle_icon"
         android:text="@string/circle_title" />
 
     <TextView
-        style="@style/circle_tips_content"
         android:id="@+id/circle_user_number"
+        style="@style/circle_tips_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/circle_name"
@@ -31,8 +31,8 @@
         android:text="@string/circle_tips" />
 
     <TextView
-        style="@style/circle_tips_content"
         android:id="@+id/circle_tips_number"
+        style="@style/circle_tips_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/circle_name"
@@ -41,15 +41,15 @@
 
 
     <Button
-        style="@style/button"
         android:id="@+id/circle_selected"
+        style="@style/button"
         android:layout_width="@dimen/dp_56"
         android:layout_height="@dimen/dp_28"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
         android:background="@color/red_line"
-        android:text="@string/selected"
         android:clickable="true"
-        android:focusable="true"/>
+        android:focusable="true"
+        android:text="@string/selected" />
 
 </RelativeLayout>

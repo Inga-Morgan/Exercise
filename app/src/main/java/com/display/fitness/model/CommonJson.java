@@ -44,137 +44,135 @@ public class CommonJson {
     }
 
     public class UserInfo {
-
+        /**
+         * id
+         */
         @SerializedName("id")
-        private String id;
-
+        public Integer id;
+        /**
+         * telephone
+         */
         @SerializedName("telephone")
-        private String telephone;
-
-
+        public String telephone;
+        /**
+         * password
+         */
         @SerializedName("password")
-        private String password;
-
+        public Object password;
+        /**
+         * name
+         */
         @SerializedName("name")
-        private String name;
-
-
+        public String name;
+        /**
+         * birthday
+         */
         @SerializedName("birthday")
-        private String birthday;
-
-
-        @SerializedName("major")
-        private String major;
-
-
+        public Object birthday;
+        /**
+         * school
+         */
+        @SerializedName("school")
+        public String school;
+        /**
+         * grade
+         */
         @SerializedName("grade")
-        private String grade;
-
+        public Integer grade;
+        /**
+         * userImage
+         */
         @SerializedName("userImage")
-        private String userImage;
-
-
+        public String userImage;
+        /**
+         * profile
+         */
         @SerializedName("profile")
-        private String profile;
-
-
+        public Object profile;
+        /**
+         * createTime
+         */
         @SerializedName("createTime")
-        private String createTime;
+        public String createTime;
 
-        public String getId() {
+        public Integer getId() {
             return id;
+        }
+
+        public void setId(Integer id) {
+            this.id = id;
         }
 
         public String getTelephone() {
             return telephone;
         }
 
-        public String getPassword() {
+        public void setTelephone(String telephone) {
+            this.telephone = telephone;
+        }
+
+        public Object getPassword() {
             return password;
+        }
+
+        public void setPassword(Object password) {
+            this.password = password;
         }
 
         public String getName() {
             return name;
         }
 
-        public String getBirthday() {
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public Object getBirthday() {
             return birthday;
         }
 
-        public String getMajor() {
-            return major;
+        public void setBirthday(Object birthday) {
+            this.birthday = birthday;
         }
 
-        public String getGrade() {
+        public String getSchool() {
+            return school;
+        }
+
+        public void setSchool(String school) {
+            this.school = school;
+        }
+
+        public Integer getGrade() {
             return grade;
+        }
+
+        public void setGrade(Integer grade) {
+            this.grade = grade;
         }
 
         public String getUserImage() {
             return userImage;
         }
 
-        public String getProfile() {
+        public void setUserImage(String userImage) {
+            this.userImage = userImage;
+        }
+
+        public Object getProfile() {
             return profile;
+        }
+
+        public void setProfile(Object profile) {
+            this.profile = profile;
         }
 
         public String getCreateTime() {
             return createTime;
         }
 
-        public void setId(String id) {
-            this.id = id;
-        }
-
-        public void setTelephone(String telephone) {
-            this.telephone = telephone;
-        }
-
-        public void setPassword(String password) {
-            this.password = password;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public void setBirthday(String birthday) {
-            this.birthday = birthday;
-        }
-
-        public void setMajor(String major) {
-            this.major = major;
-        }
-
-        public void setGrade(String grade) {
-            this.grade = grade;
-        }
-
-        public void setUserImage(String userImage) {
-            this.userImage = userImage;
-        }
-
-        public void setProfile(String profile) {
-            this.profile = profile;
-        }
-
         public void setCreateTime(String createTime) {
             this.createTime = createTime;
-        }
-
-        @Override
-        public String toString() {
-            return "UserInfo{" +
-                    "id='" + id + '\'' +
-                    ", telephone='" + telephone + '\'' +
-                    ", password='" + password + '\'' +
-                    ", name='" + name + '\'' +
-                    ", birthday='" + birthday + '\'' +
-                    ", major='" + major + '\'' +
-                    ", grade='" + grade + '\'' +
-                    ", userImage='" + userImage + '\'' +
-                    ", profile='" + profile + '\'' +
-                    ", createTime='" + createTime + '\'' +
-                    '}';
         }
     }
 

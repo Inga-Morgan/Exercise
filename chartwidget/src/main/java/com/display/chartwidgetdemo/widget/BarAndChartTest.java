@@ -206,11 +206,11 @@ public class BarAndChartTest extends View {
         mTextPaint.setAntiAlias(true);
         mTextPaint.setTextSize(DensityUtil.dip2px(getContext(), 10));
 
-        mLinePaint = new Paint();
-        mLinePaint.setAntiAlias(true);
-        mLinePaint.setStrokeWidth(1);
-        mLinePaint.setStyle(Paint.Style.STROKE);
-        mLinePaint.setPathEffect(new DashPathEffect(new float[]{15, 5}, 0));
+//        mLinePaint = new Paint();
+//        mLinePaint.setAntiAlias(true);
+//        mLinePaint.setStrokeWidth(1);
+//        mLinePaint.setStyle(Paint.Style.STROKE);
+//        mLinePaint.setPathEffect(new DashPathEffect(new float[]{15, 5}, 0));
 
         mUnitPaint = new Paint();
         mUnitPaint.setAntiAlias(true);
@@ -389,9 +389,9 @@ public class BarAndChartTest extends View {
             drawBar(canvas);
             //绘制X轴的text
             drawXAxisText(canvas);
-            for (Path rightPath : mRightPaths) {
-                canvas.drawPath(rightPath, mLinePaint);
-            }
+//            for (Path rightPath : mRightPaths) {
+//                canvas.drawPath(rightPath, mLinePaint);
+//            }
         }
     }
 

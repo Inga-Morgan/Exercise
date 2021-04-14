@@ -1,16 +1,14 @@
 package com.display.chartwidgetdemo.entity;
 
 /**
- * @author : ye's
- * @date :   2021/3/11
- * @desc
+ * 作者：chs on 2016/9/6 15:14
+ * 邮箱：657083984@qq.com
  */
-public class BarChartEntity {
-
+public class ChartEntity {
     private String xLabel;
     private Float yValue;
 
-    public BarChartEntity(String xLabel, Float yValue) {
+    public ChartEntity(String xLabel, Float yValue) {
         this.xLabel = xLabel;
         this.yValue = yValue;
     }
@@ -23,7 +21,7 @@ public class BarChartEntity {
         this.xLabel = xLabel;
     }
 
-    public BarChartEntity(Float yValue) {
+    public ChartEntity(Float yValue) {
         this.yValue = yValue;
     }
 
@@ -33,8 +31,5 @@ public class BarChartEntity {
 
     public void setyValue(Float yValue) {
         this.yValue = yValue;
-
     }
 }
-
-

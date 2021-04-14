@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
+    android:layout_margin="@dimen/dp_5"
     android:padding="@dimen/dp_5">
 
     <ImageView
@@ -51,5 +52,8 @@
         android:clickable="true"
         android:focusable="true"
         android:text="@string/selected" />
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/black2"/>
 </RelativeLayout>

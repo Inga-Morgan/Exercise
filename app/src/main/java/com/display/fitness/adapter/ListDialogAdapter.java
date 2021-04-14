@@ -27,10 +27,12 @@ public class ListDialogAdapter extends RecyclerView.Adapter<ListDialogAdapter.My
 
     private List<GroupIconsBean.CircleIcons> mList;
     private final Context context;
+    private boolean isShow;
 
-    public ListDialogAdapter(List<GroupIconsBean.CircleIcons> list, Context context) {
+    public ListDialogAdapter(List<GroupIconsBean.CircleIcons> list, Context context,boolean isShow) {
         this.mList = list;
         this.context = context;
+        this.isShow = isShow;
     }
 
     @NonNull
@@ -55,6 +57,9 @@ public class ListDialogAdapter extends RecyclerView.Adapter<ListDialogAdapter.My
         holder.circleAttenNumber.setText(items.getUser() + context.getString(R.string.circle_number));
         holder.circleUserNumber.setText(items.getUser() + context.getString(R.string.circle_tips));
         holder.selected.setText("选择");
+        if (!isShow) {
+            holder.selected.setVisibility(View.GONE);
+        }
     }
 
     @Override

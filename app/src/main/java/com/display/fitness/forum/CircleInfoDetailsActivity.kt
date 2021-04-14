@@ -53,6 +53,7 @@ class CircleInfoDetailsActivity : BaseActivity(), View.OnClickListener {
 
     private fun initView() {
         toolbar = findViewById(R.id.toolbar)
+        toolbar?.setNavigationOnClickListener { finish() }
         val appBarLayout = findViewById<AppBarLayout>(R.id.circle_info_appbar_layout)
         val circleIcon = findViewById<ImageView>(R.id.circle_info_fork_icon)
         val circleTitle = findViewById<TextView>(R.id.circle_info_fork_title)

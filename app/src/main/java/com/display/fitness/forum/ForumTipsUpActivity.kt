@@ -39,7 +39,9 @@ class ForumTipsUpActivity : AppCompatActivity(), AlertDialog.OnDialogButtonClick
         mToolbar.setNavigationOnClickListener { finish() }
         val mContent = findViewById<EditText>(R.id.forun_add_tips_content)
         addCircle?.setOnClickListener {
-            startActivityForResult(Intent(this, ForumTipsIconsActivity::class.java), REQUEST_CODE)
+            val intent = Intent(this, ForumTipsIconsActivity::class.java)
+            intent.putExtra("ForumTipsIconsActivity",true)
+            startActivityForResult(intent , REQUEST_CODE)
         }
         mToolbar.setSettingTextOnClickListener {
             post(mContent.text.toString())

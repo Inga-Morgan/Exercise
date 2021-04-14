@@ -20,18 +20,19 @@ import java.io.Serializable
  */
 class ForumTipsIconsActivity : AppCompatActivity() {
     private var mRecyclerView: RecyclerView? = null
-
+    private var isShow : Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_forum_tips_icons)
-        initView()
+        isShow = intent.getBooleanExtra("ForumTipsIconsActivity",false) as Boolean;
+        initView(isShow)
     }
 
-    private fun initView() {
+    private fun initView(isShow: Boolean) {
         val mToolbar = findViewById<CustomToolBar>(R.id.toolbar)
         mToolbar.setMyCenterTitle(R.string.circle_selected, true)
-        mToolbar.setLeftIconOnClickListener { finish() }
+        mToolbar.setNavigationOnClickListener { finish() }
         mRecyclerView = findViewById(R.id.dialog_list_rv)
         request()
     }
@@ -49,12 +50,12 @@ class ForumTipsIconsActivity : AppCompatActivity() {
     }
 
     fun initRecyclerView(list: MutableList<GroupIconsBean.CircleIcons>) {
-        val dataAdapter = ListDialogAdapter(list, this@ForumTipsIconsActivity)
+        val dataAdapter = ListDialogAdapter(list, this@ForumTipsIconsActivity,isShow)
 
         mRecyclerView?.layoutManager = LinearLayoutManager(this@ForumTipsIconsActivity)
         mRecyclerView?.adapter = dataAdapter
         //在此处理点击事件即可，viewName可以区分是item还是内部控件
-        dataAdapter.setOnItemClickListener { _, viewName, position ->
+        dataAdapter.setOnItemClickListener { holder, viewName, position ->
             when (viewName) {
                 ListDialogAdapter.ViewName.ITEM -> {
                     val intent = Intent(this@ForumTipsIconsActivity, CircleInfoDetailsActivity::class.java)

@@ -19,7 +19,12 @@
         android:paddingHorizontal="@dimen/dp_5"
         android:paddingVertical="@dimen/dp_5"
         android:text="@string/tips_init_content"
-        android:textColor="@color/deep_gray_color"/>
+        android:textColor="@color/deep_gray_color" />
 
     <include layout="@layout/layout_list_tips" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.0dip"
+        android:background="@color/black2" />
 </LinearLayout>

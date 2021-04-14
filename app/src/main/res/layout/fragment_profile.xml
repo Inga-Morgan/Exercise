@@ -25,28 +25,28 @@
                 android:paddingBottom="@dimen/dp_5">
 
                 <ImageView
-                    android:id="@+id/head"
+                    android:id="@+id/user_head"
                     android:layout_width="@dimen/dp_80"
                     android:layout_height="@dimen/dp_80"
 					android:layout_margin="@dimen/dp_10"
                     android:src="@mipmap/header" />
 
                 <TextView
-                    android:id="@+id/tvname"
+                    android:id="@+id/user_nick_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp_20"
-                    android:layout_toRightOf="@+id/head"
+                    android:layout_toEndOf="@+id/user_head"
                     android:text="@string/nick_name"
                     android:textStyle="bold"
                     android:textSize="@dimen/sp_18" />
 
                 <TextView
-                    android:id="@+id/tvmsg"
+                    android:id="@+id/user_uid"
                     style="@style/txt_ContextStyle1"
-                    android:layout_below="@+id/tvname"
+                    android:layout_below="@+id/user_nick_name"
                     android:layout_marginTop="10dp"
-                    android:layout_toRightOf="@+id/head"
+                    android:layout_toRightOf="@+id/user_head"
                     android:text="@string/user_uid"
                     android:textSize="@dimen/sp_14" />
 
@@ -62,13 +62,13 @@
 
                 <TextView
                     android:background="@color/blue_200"
-                    android:id="@+id/iv_sex"
+                    android:id="@+id/user_level"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/dp_20"
                     android:layout_marginStart="@dimen/dp_10"
                     android:layout_marginTop="@dimen/dp_22"
                     android:text="@string/user_level"
-                    android:layout_toRightOf="@+id/tvname"
+                    android:layout_toRightOf="@+id/user_nick_name"
                     android:textColor="@color/white"/>
             </RelativeLayout>
 

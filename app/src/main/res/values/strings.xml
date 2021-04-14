@@ -25,7 +25,7 @@
 
     <!-- 用户 -->
     <string name="nick_name">北野</string>
-    <string name="signature">为32</string>
+    <string name="signature_content">为32</string>
     <string name="me">我</string>
     <string name="user_uid">UID：dada20150625</string>
     <string name="user_level">菜鸡</string>
@@ -38,19 +38,19 @@
     <string name="user_feedback">意见反馈</string>
     <string name="update">检查更新</string>
     <string name="fitness_data">健身数据</string>
+    <string name="login_out">退出登录</string>
 
     <!--  个人信息  -->
     <string name="header">头像</string>
     <string name="nicky_title">昵称</string>
     <string name="birth_data">出生年月</string>
-    <string name="Signature">个性签名</string>
+    <string name="signature_title">个性签名</string>
     <string name="UID">UID</string>
     <string name="created_data">创建日期</string>
     <string name="College">学院</string>
     <string name="class_title">班级</string>
     <string name="major_title">专业</string>
     <string name="more">更多</string>
-    <string name="sologn">个性签名</string>
     <string name="account_title">学号</string>
     <string name="level_title">等级</string>
     <string name="nick_edit_intro">好的名字可以更容易记住你</string>

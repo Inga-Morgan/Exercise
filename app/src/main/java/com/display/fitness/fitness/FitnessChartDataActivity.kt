@@ -2,7 +2,6 @@ package com.display.fitness.fitness
 
 import android.graphics.Color
 import android.os.*
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.display.chartwidgetdemo.entity.BarChartEntity
@@ -51,10 +50,6 @@ class FitnessChartDataActivity : AppCompatActivity() {
                     1 -> {
                         val bundle = msg.data
                         val sportAndCountInfo = bundle?.getSerializable("SportAndCountInfo") as SportAndCountInfo
-
-                        for (i in sportAndCountInfo.rightDatas2[0].indices) {
-                            Log.e("TAG____right", sportAndCountInfo.rightDatas2[0][i].toString())
-                        }
                         handler.post(Runnable {
                             barChartNew3!!.setData(sportAndCountInfo.barList, intArrayOf(Color.parseColor("#6FC5F4")), "分组", "时长", sportAndCountInfo.rightDatas2, BarAndChartTest.TEXT_TYPE_SLANTING)
                         })
@@ -64,7 +59,6 @@ class FitnessChartDataActivity : AppCompatActivity() {
                         val bundle = msg.data
                         val listPieInfo = bundle?.getSerializable("ListPieInfo") as ListPieInfo
                         handler.post(Runnable {
-                            //Color.parseColor("#78DA9F"), Color.parseColor("#FCAE84")
                             pieChart?.setDataList(listPieInfo.barList)
                         })
                     }
@@ -85,7 +79,6 @@ class FitnessChartDataActivity : AppCompatActivity() {
                 val listCount: MutableList<Int> = ArrayList()
                 for (value in t?.data!!) {
                     listBarChart.add(BarChartEntity(value.strDateTime, value.sportTime))
-                    Log.e("TAG__count", value.rankCount.toString())
                     listCount.add(value.rankCount)
                 }
 
@@ -116,7 +109,7 @@ class FitnessChartDataActivity : AppCompatActivity() {
                 message.what = 2
                 val b = Bundle()
                 b.putSerializable("ListPieInfo", ListPieInfo(listPie))
-                message.setData(b)
+                message.data = b
                 workHandler?.sendMessage(message)
             }
 

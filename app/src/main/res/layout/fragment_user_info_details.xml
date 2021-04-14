@@ -4,8 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/layout_custom_toolbar" />
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,7 +12,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/dp_10"
             android:background="@color/white"
             android:orientation="vertical">
 
@@ -31,7 +28,8 @@
                     android:layout_height="@dimen/dp_50"
                     android:layout_centerVertical="true"
                     android:gravity="center_vertical"
-                    android:padding="@dimen/dp_10"
+                    android:paddingLeft="@dimen/dp_16"
+                    android:paddingRight="@dimen/dp_10"
                     android:text="@string/header"
                     android:textColor="@color/black"
                     android:textSize="@dimen/sp_16" />
@@ -41,9 +39,10 @@
                     android:layout_width="@dimen/dp_70"
                     android:layout_height="@dimen/dp_70"
                     android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_gravity="center"
-                    android:layout_marginEnd="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_20"
                     android:src="@mipmap/header" />
 
                 <ImageView
@@ -51,18 +50,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:src="@mipmap/icon_right" />
             </RelativeLayout>
 
+
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1.0dip"
+                android:layout_height="@dimen/dp_1"
                 android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginLeft="@dimen/dp_12"
                 android:background="@color/black2" />
 
             <RelativeLayout
-                android:id="@+id/user_details_nick_layout"
+                android:id="@+id/user_info_nick_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -73,37 +75,44 @@
                     android:layout_height="@dimen/dp_50"
                     android:layout_centerVertical="true"
                     android:gravity="center_vertical"
-                    android:padding="@dimen/dp_10"
+                    android:paddingLeft="@dimen/dp_16"
+                    android:paddingRight="@dimen/dp_10"
                     android:text="@string/nicky_title"
                     android:textColor="@color/black"
                     android:textSize="@dimen/sp_16" />
 
                 <TextView
-                    style="@style/TxtTitle"
+                    android:id="@+id/details_nicky_content"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/dp_50"
                     android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dp_36"
+                    android:layout_marginLeft="@dimen/dp_36"
                     android:layout_marginEnd="@dimen/dp_20"
-                    android:background="@drawable/setting_item_selector"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:layout_toStartOf="@id/edit_init"
+                    android:layout_toLeftOf="@id/edit_init"
                     android:gravity="center_vertical"
-                    android:padding="@dimen/dp_10"
+                    android:singleLine="true"
+                    android:src="@mipmap/header"
                     android:text="@string/nick_name"
-                    android:textSize="@dimen/sp_16" />
+                    android:textAppearance="@style/txt_ContextStyle1" />
 
                 <ImageView
                     android:id="@+id/edit_init"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:src="@mipmap/icon_right" />
             </RelativeLayout>
 
-
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1.0dip"
+                android:layout_height="@dimen/dp_1"
                 android:background="@color/black2" />
 
 
@@ -368,15 +377,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="1.0dip"
                 android:background="@color/black2" />
-
             <Button
-                android:id="@+id/btnexit"
+                android:id="@+id/btn_exit"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_40"
-                android:layout_marginTop="@dimen/dp_18"
+                android:layout_marginTop="@dimen/dp_16"
                 android:background="@drawable/btn_bg_red2"
                 android:padding="@dimen/dp_10"
-                android:text="退出登录"
+                android:text="@string/login_out"
                 android:textColor="@color/white" />
         </LinearLayout>
     </ScrollView>

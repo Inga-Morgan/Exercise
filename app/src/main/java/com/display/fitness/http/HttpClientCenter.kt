@@ -160,6 +160,56 @@ object HttpClientCenter {
     }
 
     /**
+     * 更改用户昵称
+     */
+    fun editUserInfo(name: String, callback: HttpCallback<CommonJson>) {
+        OkHttpUtils.post().url(Constants.ROOT_URL + Constants.USER_INFO_UPDATE)
+                .addParams("name", name)
+                .build()
+                .execute(object : JsonCallback<CommonJson>(CommonJson::class.java) {
+                    override fun onResponse(response: CommonJson?, id: Int) {
+                        if (response?.code == "200") {
+                            callback.onSuccess(response)
+                            UsersInfo.setUserInfo(response.userInfo)
+                        } else {
+                            callback.onFail(null)
+                        }
+                    }
+
+                    override fun onError(call: Call, e: java.lang.Exception, id: Int) {
+                        callback.onFail(e)
+                    }
+
+                    override fun onAfter(id: Int) {
+                        callback.onFinish()
+                    }
+                })
+    }
+
+    /**
+     * 更改用户头像
+     */
+    fun postUserImg(file: File?, callback: HttpCallback<CommonJson>) {
+        OkHttpUtils.post().url(Constants.ROOT_URL + Constants.USER_INFO_UPDATE)
+                .addFile("userImage", file?.name, file)
+                .build()
+                .execute(object : JsonCallback<CommonJson>(CommonJson::class.java) {
+                    override fun onResponse(response: CommonJson?, id: Int) {
+                        if (response?.code == "200") {
+                            callback.onSuccess(response)
+                            UsersInfo.setUserInfo(response.userInfo)
+                        } else {
+                            callback.onFail(null)
+                        }
+                    }
+
+                    override fun onError(call: Call, e: java.lang.Exception, id: Int) {
+                        callback.onFail(e)
+                    }
+                })
+    }
+
+    /**
      * 获取帖子列表
      */
     fun getTipsList(id: String, callback: HttpCallback<TipsBean>) {

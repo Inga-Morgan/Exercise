@@ -70,7 +70,7 @@
             android:layout_marginStart="@dimen/dp_36"
             android:maxLines="10"
             android:padding="@dimen/dp_5"
-            android:text="@string/signature"
+            android:text="@string/signature_content"
             android:textColor="@color/white"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"

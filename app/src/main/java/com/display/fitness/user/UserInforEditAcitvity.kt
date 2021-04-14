@@ -7,44 +7,28 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import com.display.fitness.R
 import com.display.fitness.base.BaseActivity
+import com.display.fitness.toolbar.CustomToolBar
 
-class UserInforEditAcitvity : BaseActivity(), View.OnClickListener {
+class UserInforEditAcitvity : BaseActivity(){
 
-    private val REQUEST_CODE: Int = 1
-    private val birthLayout : RelativeLayout ?= null
+    companion object{
+        val REQUEST_CODE: Int = 1
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_details)
-        initView()
-        setTitle(R.string.UID)
+        setContentView(R.layout.activity_with_toolbar)
+        switchContent()
+        initview()
     }
 
-    override fun setTitle(title: CharSequence?) {
-
+    fun switchContent() {
+        //必需继承FragmentActivity,嵌套fragment只需要这行代码
+        supportFragmentManager.beginTransaction().replace(R.id.content_layout, UserInforEditFragment()).commitAllowingStateLoss()
     }
 
-    private fun initView() {
-        val header = findViewById<ImageView>(R.id.edit_init)
-        val birthLayout = findViewById<RelativeLayout>(R.id.user_details_birth_layout)
-        header.setOnClickListener(this)
-        birthLayout.setOnClickListener(this)
-        supportActionBar?.setTitle(R.string.UID)
-    }
-
-    override fun onClick(v: View?) {
-        when (v?.id) {
-            R.id.edit_init -> startActivityForResult(Intent(this@UserInforEditAcitvity, UserNickNameEditAcitvity::class.java), REQUEST_CODE)
-//            R.id.user_info_userLogo , R.id.edit_header ->
-
-            R.id.user_details_birth_layout -> {
-
-            }
-        }
-    }
-
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        val result: String? = data?.getExtras()?.getString("result")
+    fun initview() {
+        val mToolbar = findViewById<CustomToolBar>(R.id.toolbar)
+        mToolbar.setMyCenterTitle(R.string.info_details,true)
+        mToolbar.setNavigationOnClickListener{ this@UserInforEditAcitvity.finish() }
     }
 }

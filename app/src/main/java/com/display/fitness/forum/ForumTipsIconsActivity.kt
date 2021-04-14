@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.blankj.utilcode.util.ToastUtils
 import com.display.fitness.R
 import com.display.fitness.adapter.ListDialogAdapter
 import com.display.fitness.bean.GroupIconsBean
@@ -58,7 +57,9 @@ class ForumTipsIconsActivity : AppCompatActivity() {
         dataAdapter.setOnItemClickListener { _, viewName, position ->
             when (viewName) {
                 ListDialogAdapter.ViewName.ITEM -> {
-                    ToastUtils.showShort("item")
+                    val intent = Intent(this@ForumTipsIconsActivity, CircleInfoDetailsActivity::class.java)
+                    intent.putExtra("CircleInfoDetailsActivity", list[position])
+                    startActivity(intent)
                 }
 
                 ListDialogAdapter.ViewName.PRACTISE -> {

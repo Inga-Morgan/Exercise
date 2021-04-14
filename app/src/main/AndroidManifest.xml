@@ -28,9 +28,9 @@
         android:testOnly="false"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".forum.ForumItemActivity"></activity>
-        <activity android:name=".forum.ForumCommentActivity"></activity>
-        <activity android:name=".forum.CircleAddActivity" />
+        <activity android:name=".forum.ForumItemActivity"/>
+        <activity android:name=".forum.ForumCommentActivity"/>
+        <activity android:name=".forum.CircleInfoDetailsActivity" />
         <activity android:name=".login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

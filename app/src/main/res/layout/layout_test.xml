@@ -34,8 +34,8 @@
                     <TableRow
                         android:id="@+id/more_page_row0"
                         android:layout_width="fill_parent"
-                        android:layout_marginLeft="2.0dip"
-                        android:layout_marginRight="2.0dip"
+                        android:layout_marginStart="2.0dip"
+                        android:layout_marginEnd="2.0dip"
                         android:paddingTop="8.0dip"
                         android:paddingBottom="16.0dip">
 
@@ -76,8 +76,8 @@
                     <TableRow
                         android:id="@+id/more_page_row1"
                         android:layout_width="fill_parent"
-                        android:layout_marginLeft="2.0dip"
-                        android:layout_marginRight="2.0dip"
+                        android:layout_marginStart="2.0dip"
+                        android:layout_marginEnd="2.0dip"
                         android:paddingTop="16.0dip"
                         android:paddingBottom="16.0dip">
 
@@ -104,8 +104,8 @@
                     <TableRow
                         android:id="@+id/more_page_row2"
                         android:layout_width="fill_parent"
-                        android:layout_marginLeft="2.0dip"
-                        android:layout_marginRight="2.0dip"
+                        android:layout_marginStart="2.0dip"
+                        android:layout_marginEnd="2.0dip"
                         android:paddingTop="16.0dip"
                         android:paddingBottom="16.0dip">
 
@@ -132,8 +132,8 @@
                     <TableRow
                         android:id="@+id/more_page_row3"
                         android:layout_width="fill_parent"
-                        android:layout_marginLeft="2.0dip"
-                        android:layout_marginRight="2.0dip"
+                        android:layout_marginStart="2.0dip"
+                        android:layout_marginEnd="2.0dip"
                         android:paddingTop="16.0dip"
                         android:paddingBottom="16.0dip">
 
@@ -174,8 +174,8 @@
                     <TableRow
                         android:id="@+id/more_page_row4"
                         android:layout_width="fill_parent"
-                        android:layout_marginLeft="2.0dip"
-                        android:layout_marginRight="2.0dip"
+                        android:layout_marginStart="2.0dip"
+                        android:layout_marginEnd="2.0dip"
                         android:paddingTop="16.0dip"
                         android:paddingBottom="16.0dip">
 
@@ -202,8 +202,8 @@
                     <TableRow
                         android:id="@+id/more_page_row5"
                         android:layout_width="fill_parent"
-                        android:layout_marginLeft="2.0dip"
-                        android:layout_marginRight="2.0dip"
+                        android:layout_marginStart="2.0dip"
+                        android:layout_marginEnd="2.0dip"
                         android:paddingTop="16.0dip"
                         android:paddingBottom="16.0dip">
 
@@ -230,8 +230,8 @@
                     <TableRow
                         android:id="@+id/more_page_row6"
                         android:layout_width="fill_parent"
-                        android:layout_marginLeft="2.0dip"
-                        android:layout_marginRight="2.0dip"
+                        android:layout_marginStart="2.0dip"
+                        android:layout_marginEnd="2.0dip"
                         android:paddingTop="16.0dip"
                         android:paddingBottom="16.0dip">
 
@@ -258,8 +258,8 @@
                     <TableRow
                         android:id="@+id/more_page_row7"
                         android:layout_width="fill_parent"
-                        android:layout_marginLeft="2.0dip"
-                        android:layout_marginRight="2.0dip"
+                        android:layout_marginStart="2.0dip"
+                        android:layout_marginEnd="2.0dip"
                         android:paddingTop="16.0dip"
                         android:paddingBottom="16.0dip">
 

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="@dimen/dp_16"
+        android:padding="@dimen/dp_5">
+
+        <ImageView
+            android:id="@+id/circle_info_fork_icon"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/header" />
+
+        <TextView
+            android:id="@+id/circle_info_fork_title"
+            style="@style/txt_titleStyle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_21"
+            android:layout_toEndOf="@+id/circle_info_fork_icon"
+            android:text="@string/add_circle_title" />
+
+        <TextView
+            android:id="@+id/circle_info_fork_intro"
+            style="@style/text_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/circle_info_fork_title"
+            android:layout_marginStart="@dimen/dp_5"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_toEndOf="@+id/circle_info_fork_icon"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:padding="@dimen/dp_5"
+            android:textColor="@color/white"
+            android:text="@string/tips_init_content" />
+
+        <Button
+            android:id="@+id/circle_info_fork_btn"
+            android:layout_width="@dimen/dp_42"
+            android:layout_height="@dimen/dp_24"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="19dp"
+            android:background="@color/blue_200"
+            android:text="关注" />
+    </RelativeLayout>
+</merge>

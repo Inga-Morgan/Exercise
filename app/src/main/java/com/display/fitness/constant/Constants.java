@@ -23,6 +23,8 @@ public class Constants {
     public static final String GROUP_CREATE = "/group/create";
     public static final String GROUP_UPDATE = "/group/update";
     public static final String GROUP_LIST = "/group/list";
+    public static final String GROUP_FORK = "/group/fork";
+    public static final String GROUP_MY_FORK = "/group/myFork";
     public static final String USER_SEARCH = "/user/searchUser";
     public static final String GROUP_NUMBER_ADD = "/group/member/add";
     public static final String GROUP_NUMBER_DELETE = "/group/member/delete";

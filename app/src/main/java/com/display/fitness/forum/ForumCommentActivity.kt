@@ -88,7 +88,7 @@ class ForumCommentActivity : AppCompatActivity(), View.OnClickListener {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         val collapsingToolbar = findViewById<CollapsingToolbarLayout>(R.id.collapsing_toolbar)
-        collapsingToolbar.title = "详情"
+//        collapsingToolbar.title = "详情"
     }
 
     /**
@@ -137,6 +137,7 @@ class ForumCommentActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {
+
             finish()
             return true
         }

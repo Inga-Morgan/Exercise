@@ -1,17 +1,12 @@
 package com.display.fitness.http
 
-import android.util.Log
 import com.display.fitness.app.MyApplication
-import com.display.fitness.bean.CommentBean
-import com.display.fitness.bean.GroupIconsBean
-import com.display.fitness.bean.TipsBean
-import com.display.fitness.bean.TipsInfo
+import com.display.fitness.bean.*
 import com.display.fitness.constant.Constants
 import com.display.fitness.model.CommonJson
 import com.display.fitness.model.EachSportTime
 import com.display.fitness.model.SportInfoBean
 import com.display.fitness.model.SportInforEntity
-import com.display.fitness.utils.SaveUserInfoUtils
 import com.zhy.http.okhttp.OkHttpUtils
 import com.zhy.http.okhttp.callback.FileCallBack
 import com.zhy.http.okhttp.cookie.CookieJarImpl
@@ -91,7 +86,7 @@ object HttpClientCenter {
                         if (response?.code == "200") {
                             callback.onSuccess(response)
                             ClientHelper.setUserData(response)
-                            SaveUserInfoUtils.setUserInfo(response.userInfo)
+                            UsersInfo.setUserInfo(response.userInfo)
                         } else {
                             callback.onFail(null)
                         }
@@ -123,10 +118,6 @@ object HttpClientCenter {
                     override fun onError(call: Call, e: java.lang.Exception, id: Int) {
                         callback.onFail(e)
                     }
-
-                    override fun onAfter(id: Int) {
-                        callback.onFinish()
-                    }
                 })
     }
 
@@ -147,10 +138,6 @@ object HttpClientCenter {
                     override fun onError(call: Call, e: java.lang.Exception, id: Int) {
                         callback.onFail(e)
                     }
-
-                    override fun onAfter(id: Int) {
-                        callback.onFinish()
-                    }
                 })
     }
 
@@ -169,18 +156,15 @@ object HttpClientCenter {
                     override fun onError(call: Call, e: java.lang.Exception, id: Int) {
                         callback.onFail(e)
                     }
-
-                    override fun onAfter(id: Int) {
-                        callback.onFinish()
-                    }
                 })
     }
 
     /**
      * 获取帖子列表
      */
-    fun getTipsList(callback: HttpCallback<TipsBean>) {
+    fun getTipsList(id: String, callback: HttpCallback<TipsBean>) {
         OkHttpUtils.post().url(Constants.ROOT_URL + Constants.FORUM_LIST)
+                .addParams("group",id)
                 .build()
                 .execute(object : JsonCallback<TipsBean>(TipsBean::class.java) {
                     override fun onResponse(response: TipsBean?, id: Int) {
@@ -198,7 +182,7 @@ object HttpClientCenter {
                 })
     }
 
-    fun uploadTips(content: String,group: String, callback: HttpCallback<TipsBean.TipsUpInfo>) {
+    fun uploadTips(content: String, group: String, callback: HttpCallback<TipsBean.TipsUpInfo>) {
         OkHttpUtils.post().url(Constants.ROOT_URL + Constants.POST_CREATE)
                 .addParams("content", content)
                 .addParams("group",group)
@@ -214,10 +198,6 @@ object HttpClientCenter {
 
                     override fun onError(call: Call, e: Exception, id: Int) {
                         callback.onFail(e)
-                    }
-
-                    override fun onAfter(id: Int) {
-                        callback.onFinish()
                     }
                 })
     }
@@ -237,14 +217,10 @@ object HttpClientCenter {
                     override fun onError(call: Call, e: Exception, id: Int) {
                         callback.onFail(e)
                     }
-
-                    override fun onAfter(id: Int) {
-                        callback.onFinish()
-                    }
                 })
     }
 
-    fun getTipsCommentList(id : String? ,callback: HttpCallback<CommentBean?>) {
+    fun getTipsCommentList(id: String?, callback: HttpCallback<CommentBean?>) {
         OkHttpUtils.post().url(Constants.ROOT_URL + Constants.COMMENT_LIST)
                 .addParams("id",id)
                 .build()
@@ -260,17 +236,13 @@ object HttpClientCenter {
                     override fun onError(call: Call, e: Exception, id: Int) {
                         callback.onFail(e)
                     }
-
-                    override fun onAfter(id: Int) {
-                        callback.onFinish()
-                    }
                 })
     }
 
-    fun postCommentContent(id : String? ,comment: String?,callback: HttpCallback<CommentBean.ReplyCommentBean?>) {
+    fun postCommentContent(id: String?, comment: String?, callback: HttpCallback<CommentBean.ReplyCommentBean?>) {
         OkHttpUtils.post().url(Constants.ROOT_URL + Constants.COMMENT_CREATE)
-                .addParams("post",id)
-                .addParams("comment",comment)
+                .addParams("post", id)
+                .addParams("comment", comment)
                 .build()
                 .execute(object : JsonCallback<CommentBean.ReplyCommentBean>(CommentBean.ReplyCommentBean::class.java) {
                     override fun onResponse(response: CommentBean.ReplyCommentBean?, id: Int) {
@@ -284,9 +256,49 @@ object HttpClientCenter {
                     override fun onError(call: Call, e: Exception, id: Int) {
                         callback.onFail(e)
                     }
+                })
+    }
 
-                    override fun onAfter(id: Int) {
-                        callback.onFinish()
+    /**
+     * 添加关注
+     */
+    fun addForkCircle(id: String?, callback: HttpCallback<CommentBean.ReplyCommentBean?>) {
+        OkHttpUtils.post().url(Constants.ROOT_URL + Constants.GROUP_FORK)
+                .addParams("group", id)
+                .build()
+                .execute(object : JsonCallback<CommentBean.ReplyCommentBean>(CommentBean.ReplyCommentBean::class.java) {
+                    override fun onResponse(response: CommentBean.ReplyCommentBean?, id: Int) {
+                        if (response?.code == "200") {
+                            callback.onSuccess(response)
+                        } else {
+                            callback.onFail(null)
+                        }
+                    }
+
+                    override fun onError(call: Call, e: Exception, id: Int) {
+                        callback.onFail(e)
+                    }
+                })
+    }
+
+    /**
+     * 查看关注
+     */
+    fun checkForkInfo(callback: HttpCallback<CircleForked?>) {
+        OkHttpUtils.post().url(Constants.ROOT_URL + Constants.GROUP_MY_FORK)
+                .build()
+                .execute(object : JsonCallback<CircleForked>(CircleForked::class.java) {
+                    override fun onResponse(response: CircleForked?, id: Int) {
+                        if (response?.code == "200") {
+                            callback.onSuccess(response)
+                            UsersInfo.setCircleForked(response.data)
+                        } else {
+                            callback.onFail(null)
+                        }
+                    }
+
+                    override fun onError(call: Call, e: Exception, id: Int) {
+                        callback.onFail(e)
                     }
                 })
     }

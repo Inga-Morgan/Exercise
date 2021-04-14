@@ -113,7 +113,7 @@ class ScheduleFragment : Fragment() {
     }
 
     private fun request() {
-        HttpClientCenter.getTipsList(object : HttpCallback<TipsBean>() {
+        HttpClientCenter.getTipsList("0",object : HttpCallback<TipsBean>() {
             override fun onSuccess(t: TipsBean?) {
                 infoList = t?.data as List<TipsInfo>
                 mSwipeRefreshLayout?.isRefreshing = false

@@ -1,8 +1,11 @@
 package com.display.fitness.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.display.fitness.R;
 import com.display.fitness.base.BaseActivity;
@@ -19,7 +22,10 @@ import java.util.List;
  */
 public class NormalActivity extends BaseActivity {
 
+    private FragmentManager mFragmentManager;
+    private FragmentTransaction mFragmentTransaction;
     private NormalNavigationBar navigationBar;
+    private ScheduleFragment scheduleFragment = new ScheduleFragment();
     private final String[] tabText = {"首页", "论坛", "我的"};
     /**
      * 未选中icon
@@ -38,7 +44,6 @@ public class NormalActivity extends BaseActivity {
         setContentView(R.layout.activity_normal);
         initView();
     }
-
 
     private void initView() {
         navigationBar = findViewById(R.id.navigationBar);
@@ -61,4 +66,9 @@ public class NormalActivity extends BaseActivity {
     }
 
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode,data);
+        scheduleFragment.onActivityResult(requestCode,resultCode,data);
+    }
 }

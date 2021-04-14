@@ -20,7 +20,7 @@ public class TipsBean implements Serializable{
      * message
      */
     @SerializedName("message")
-    public Object message;
+    public String message;
     /**
      * data
      */

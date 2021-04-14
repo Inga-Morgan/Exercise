@@ -30,13 +30,12 @@
             android:layout_width="wrap_content"
             android:layout_height="@dimen/dp_50"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_20"
             android:background="@drawable/setting_item_selector"
             android:gravity="center_vertical"
-            android:paddingLeft="@dimen/dp_16"
-            android:paddingRight="@dimen/dp_10"
+            android:paddingStart="@dimen/dp_16"
+            android:paddingEnd="@dimen/dp_10"
             android:text="@string/user_birthday"
             android:textSize="@dimen/sp_16" />
 
@@ -45,7 +44,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:src="@mipmap/icon_right" />
     </RelativeLayout>
@@ -69,7 +67,7 @@
             android:layout_centerVertical="true"
             android:background="@drawable/setting_item_selector"
             android:gravity="center_vertical"
-            android:paddingLeft="@dimen/dp_16"
+            android:paddingStart="@dimen/dp_16"
             android:paddingRight="@dimen/dp_10"
             android:text="@string/created_data"
             android:textSize="@dimen/sp_16" />
@@ -82,7 +80,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_20"
             android:background="@drawable/setting_item_selector"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/dp_16"
@@ -133,7 +131,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_20"
             android:background="@drawable/setting_item_selector"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/dp_16"

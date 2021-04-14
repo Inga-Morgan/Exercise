@@ -3,8 +3,6 @@ package com.display.fitness.fitness
 import android.graphics.Color
 import android.os.*
 import android.util.Log
-import android.view.View
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.display.chartwidgetdemo.entity.BarChartEntity
@@ -16,7 +14,6 @@ import com.display.fitness.http.HttpCallback
 import com.display.fitness.http.HttpClientCenter
 import com.display.fitness.model.EachSportTime
 import com.display.fitness.model.SportInfoBean
-import com.display.fitness.utils.SaveUserInfoUtils
 import java.io.Serializable
 
 class FitnessChartDataActivity : AppCompatActivity() {
@@ -88,7 +85,7 @@ class FitnessChartDataActivity : AppCompatActivity() {
                 val listCount: MutableList<Int> = ArrayList()
                 for (value in t?.data!!) {
                     listBarChart.add(BarChartEntity(value.strDateTime, value.sportTime))
-                    Log.e("TAG__count",value.rankCount.toString())
+                    Log.e("TAG__count", value.rankCount.toString())
                     listCount.add(value.rankCount)
                 }
 
